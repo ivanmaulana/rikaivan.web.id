@@ -1,3 +1,196 @@
 html, body {
     font-family: 'Roboto', serif;
 }
+
+#header {
+    padding: 20px 0;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.08);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 999;
+    background-color: white;
+}
+
+.header-menu {
+    padding-top: 10px;
+}
+
+.header-menu span,
+.header-menu-mobile span {
+    color: #848484;
+    cursor: pointer;
+}
+
+.header-menu span,
+.header-menu-mobile span {
+    padding-right: 20px;
+}
+
+.web-title {
+    color: #757575;
+    font-family: 'Roboto slab', serif;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+.btn-header {
+    background-color: #00bfa5;
+    border-radius: 2px;
+    border: transparent;
+    font-size: 12px;
+}
+
+.section {
+    padding: 50px;
+}
+
+.section-1 {
+    background-color: #00bfa5;
+    color: white;
+    margin-top: 72px;
+}
+
+.section-1 .section-1-title {
+    font-family: "Roboto slab";
+    padding-top: 20px;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.section-1 h1 {
+    font-family: "Roboto slab";
+    font-size: 46px;
+    padding-bottom: 30px;
+}
+
+.section-1 p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.section-1 hr {
+    width: 60px;
+    float: left;
+}
+
+#footer {
+    background-color: #444;
+    padding: 30px 0;
+    color: #a3a3a3;
+}
+
+#footer a {
+    color: white;
+}
+
+.quran-text {
+    font-family: "Roboto slab";
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.quran-surah {
+    font-size: 17px;
+    font-family: "Roboto slab";
+    color: #444;
+}
+
+.section-3 {
+    display: table;
+    width: 100%;
+    background-color: #00b0ff;
+}
+
+.section-3 div {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.section-3 iframe {
+    border: 0;
+    width: 100%;
+    height: 400px;
+}
+
+.wedding-map {
+    background-color: white;
+}
+
+.wedding-info {
+    padding: 30px !important;
+    color: white;
+}
+
+.section-3 .title {
+    font-family: "Roboto slab";
+    padding-bottom: 20px;
+}
+
+.wedding-title {
+    font-family: "Roboto slab";
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.wedding-detail {
+    font-size: 16px;
+}
+
+@media (max-width: 991px) {
+    #header {
+        padding-bottom: 0;
+    }
+
+    .section {
+        padding: 20px 0;
+    }
+
+    .section-1 {
+        margin-top: 108px;
+    }
+    
+    .section-1 h1 {
+        font-size: 27px;
+        padding-bottom: 20px;
+    }
+
+    .header-menu-mobile {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        overflow: auto;
+    }
+
+    .web-title {
+        font-size: 22px;
+    }
+
+    .section-2 {
+        margin-top: 20px;
+    }
+
+    .quran-text {
+        font-size: 16px;
+    }
+
+    .section-3 iframe {
+        height: 400px;
+    }
+
+    .wedding-info {
+        padding: 15px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-3 iframe {
+        height: 300px;
+    }
+}
+
+@media (min-width: 992px) {
+    #header {
+        padding: 20px;
+    }
+}

@@ -1,37 +1,27 @@
 import React, {Component} from "react";
-import Link from "next/link";
-
 import Head from "./components/head";
+import Header from "./components/header";
+import Section1 from "./components/section-1";
+import Section2 from "./components/section-2";
+import Section3 from "./components/section-3";
+import Footer from "./components/footer";
 
 class App extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            count: 0
-        }
-    }
-
-    handleAdd = () => {
-        this.setState({
-            count: this.state.count + 1
-        });
     }
 
     render() {
         return(
             <div>
                 <Head />
-                Index
-                <p>
-                    <Link href="about">
-                        about
-                    </Link>
-                </p>
-                <button onClick={this.handleAdd}>Add</button>
-                <p>count : {this.state.count}</p>
+                <Header />
+                <Section1 />
+                <Section2 />
+                <Section3 />
+                <Footer />
             </div>
-        )
+        );
     }
 }
 
