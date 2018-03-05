@@ -118,70 +118,86 @@ var HeadComponent = function (_PureComponent) {
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "div",
-                        { className: "pull-left", __source: {
+                        { className: "row", __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 8
                             }
                         },
-                        "Handcrafted with love by ",
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "a",
-                            { href: "https://linkedin.com/in/ivanmaulana", target: "_blank", __source: {
+                            "div",
+                            { className: "col-md-10 col-md-offset-1 col-xs-12 col-sm-10 col-sm-offset-1", __source: {
                                     fileName: _jsxFileName,
                                     lineNumber: 9
                                 }
                             },
-                            "Ivan Maulana"
-                        ),
-                        ".",
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", { className: "visible-xs", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 10
-                            }
-                        }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", { className: "visible-xs", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 11
-                            }
-                        })
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "pull-left visible-xs", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 13
-                            }
-                        },
-                        "Built with ",
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "a",
-                            { href: "https://github.com/zeit/next.js/", target: "_blank", __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 14
-                                }
-                            },
-                            "Next.js framework"
-                        ),
-                        ". Inspired by Google site's design."
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "pull-right hidden-xs", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 16
-                            }
-                        },
-                        "Built with ",
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "a",
-                            { href: "https://github.com/zeit/next.js/", target: "_blank", __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 17
-                                }
-                            },
-                            "Next.js framework"
-                        ),
-                        ". Inspired by Google site's design."
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "div",
+                                { className: "pull-left", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 10
+                                    }
+                                },
+                                "Handcrafted by ",
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "a",
+                                    { href: "https://linkedin.com/in/ivanmaulana", target: "_blank", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 11
+                                        }
+                                    },
+                                    "Ivan Maulana"
+                                ),
+                                ".",
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", { className: "visible-xs", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 12
+                                    }
+                                }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", { className: "visible-xs", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 13
+                                    }
+                                })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "div",
+                                { className: "pull-left visible-xs", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 15
+                                    }
+                                },
+                                "Built with ",
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "a",
+                                    { href: "https://github.com/zeit/next.js/", target: "_blank", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 16
+                                        }
+                                    },
+                                    "Next.js framework"
+                                ),
+                                ". Inspired by Google site's design."
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "div",
+                                { className: "pull-right hidden-xs", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 18
+                                    }
+                                },
+                                "Built with ",
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "a",
+                                    { href: "https://github.com/zeit/next.js/", target: "_blank", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 19
+                                        }
+                                    },
+                                    "Next.js framework"
+                                ),
+                                ". Inspired by Google site's design."
+                            )
+                        )
                     )
                 )
             );
@@ -246,7 +262,7 @@ var HeadComponent = function (_PureComponent) {
                     },
                     "Rika & Ivan Wedding"
                 ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", { name: "description", content: "April 1, 2018. Rika & Ivan Wedding.", __source: {
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", { name: "description", content: "We're getting married on Sunday, April 1, 2018.", __source: {
                         fileName: _jsxFileName,
                         lineNumber: 9
                     }
@@ -380,10 +396,25 @@ var HeadComponent = function (_PureComponent) {
                             "Home"
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "span",
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 14
+                                }
+                            },
+                            "Get Invitation ",
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/static/download.png", width: "16", __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 14
+                                }
+                            })
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "btn",
                             { className: "btn btn-primary btn-header", __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 14
+                                    lineNumber: 15
                                 }
                             },
                             "Leave messages"
@@ -394,26 +425,16 @@ var HeadComponent = function (_PureComponent) {
                     "div",
                     { className: "container visible-xs visible-sm header-menu-mobile header-menu-mobile-outer", __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 17
+                            lineNumber: 18
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "div",
                         { className: "header-menu-mobile-inner", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 18
+                                lineNumber: 19
                             }
                         },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "span",
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 19
-                                }
-                            },
-                            "Home"
-                        ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "span",
                             {
@@ -432,7 +453,12 @@ var HeadComponent = function (_PureComponent) {
                                     lineNumber: 21
                                 }
                             },
-                            "Home"
+                            "Get Invitation ",
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/static/download.png", width: "16", __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 21
+                                }
+                            })
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "span",
@@ -470,6 +496,16 @@ var HeadComponent = function (_PureComponent) {
                                 __source: {
                                     fileName: _jsxFileName,
                                     lineNumber: 25
+                                }
+                            },
+                            "Home"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "span",
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 26
                                 }
                             },
                             "Home"
@@ -532,54 +568,93 @@ var Section1Component = function (_PureComponent) {
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "h1",
-                        {
-                            __source: {
+                        "div",
+                        { className: "row", __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 8
                             }
                         },
-                        "We're Getting Married."
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "div",
-                        { className: "row", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 9
-                            }
-                        },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "div",
-                            { className: "col-xs-12 col-md-6", __source: {
+                            { className: "col-md-10 col-md-offset-1 col-xs-12 col-sm-10 col-sm-offset-1", __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 10
+                                    lineNumber: 9
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "p",
+                                "h1",
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 11
+                                        lineNumber: 10
                                     }
                                 },
-                                "Together with our parents. ",
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 11
-                                    }
-                                }),
-                                " We, invite you to share in the joy of beginning our new life together."
+                                "We're Getting Married."
                             ),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "p",
-                                { className: "section-1-title", __source: {
+                                "div",
+                                { className: "row", __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 12
+                                        lineNumber: 11
                                     }
                                 },
-                                "- Rika Rosdiana & Ivan Maulana."
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    { className: "col-xs-12 col-md-6 col-sm-6", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 12
+                                        }
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "p",
+                                        {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 13
+                                            }
+                                        },
+                                        "Together with our parents. ",
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 13
+                                            }
+                                        }),
+                                        " We, invite you to share in the joy of beginning our new life together."
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "p",
+                                        { className: "section-1-title", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 14
+                                            }
+                                        },
+                                        "- Rika Rosdiana & Ivan Maulana."
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    { className: "col-xs-12 col-md-6 col-sm-6 text-center download-btn", style: { marginTop: "18px" }, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 16
+                                        }
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "span",
+                                        {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 17
+                                            }
+                                        },
+                                        "Get our invitation (.pdf soft copy) ",
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/static/download.png", width: "16", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 18
+                                            }
+                                        })
+                                    )
+                                )
                             )
                         )
                     )
@@ -640,34 +715,50 @@ var Section2Component = function (_PureComponent) {
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "p",
-                        { className: "quran-text", __source: {
+                        "div",
+                        { className: "row", __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 8
                             }
                         },
-                        "\u201CAnd among his signs is this, that He created for you mates from among your yourselves that you may dwell in tranquillity with them. ",
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", { className: "visible-xs", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 8
-                            }
-                        }),
-                        " ",
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", { className: "visible-xs", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 8
-                            }
-                        }),
-                        " And He has put love and mercy between your hearts: verily in that are signs for those who reflect.\u201D"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "p",
-                        { className: "quran-surah", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 9
-                            }
-                        },
-                        "Surah ar Rum: 71"
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { className: "col-md-10 col-md-offset-1 col-xs-12 col-sm-10 col-sm-offset-1", __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 9
+                                }
+                            },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "p",
+                                { className: "quran-text", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 10
+                                    }
+                                },
+                                "\u201CAnd among his signs is this, that He created for you mates from among your yourselves that you may dwell in tranquillity with them. ",
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", { className: "visible-xs", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 10
+                                    }
+                                }),
+                                " ",
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", { className: "visible-xs", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 10
+                                    }
+                                }),
+                                " And He has put love and mercy between your hearts: verily in that are signs for those who reflect.\u201D"
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "p",
+                                { className: "quran-surah", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 11
+                                    }
+                                },
+                                "Surah ar Rum: 71"
+                            )
+                        )
                     )
                 )
             );
@@ -831,6 +922,327 @@ var Section3Component = function (_PureComponent) {
 
 /***/ }),
 
+/***/ "./pages/components/section-4.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _jsxFileName = "/home/qlapa/wedding/pages/components/section-4.js";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var Section4Component = function (_PureComponent) {
+    _inherits(Section4Component, _PureComponent);
+
+    function Section4Component() {
+        _classCallCheck(this, Section4Component);
+
+        return _possibleConstructorReturn(this, (Section4Component.__proto__ || Object.getPrototypeOf(Section4Component)).apply(this, arguments));
+    }
+
+    _createClass(Section4Component, [{
+        key: "render",
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "section section-4", __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 6
+                    }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { className: "container", __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 7
+                        }
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "row", __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 8
+                            }
+                        },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { className: "col-md-10 col-md-offset-1 col-xs-12 col-sm-10 col-sm-offset-1", __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 9
+                                }
+                            },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "div",
+                                { className: "row", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 10
+                                    }
+                                },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    { className: "col-xs-12 col-md-6 col-sm-6", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 11
+                                        }
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "p",
+                                        { className: "bride", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 12
+                                            }
+                                        },
+                                        "THE BRIDE"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "bride-after", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 13
+                                        }
+                                    }),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "h3",
+                                        { className: "bride-name", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 14
+                                            }
+                                        },
+                                        "Rika Rosdiana"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "p",
+                                        {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 15
+                                            }
+                                        },
+                                        "Daughter of (Alm.) Mr. Rochmani & Mrs. Rohimah"
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    { className: "col-xs-12 col-md-6 col-sm-6", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 17
+                                        }
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "p",
+                                        { className: "groom", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 18
+                                            }
+                                        },
+                                        "THE GROOM"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "groom-after", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 19
+                                        }
+                                    }),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "h3",
+                                        { className: "groom-name", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 20
+                                            }
+                                        },
+                                        "Ivan Maulana Putra"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "p",
+                                        {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 21
+                                            }
+                                        },
+                                        "Son of Mr. Syahruroji & Mrs. Marhaliah"
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Section4Component;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["PureComponent"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Section4Component);
+
+/***/ }),
+
+/***/ "./pages/components/section-5.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _jsxFileName = "/home/qlapa/wedding/pages/components/section-5.js";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var Section5Component = function (_PureComponent) {
+    _inherits(Section5Component, _PureComponent);
+
+    function Section5Component() {
+        _classCallCheck(this, Section5Component);
+
+        return _possibleConstructorReturn(this, (Section5Component.__proto__ || Object.getPrototypeOf(Section5Component)).apply(this, arguments));
+    }
+
+    _createClass(Section5Component, [{
+        key: "render",
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "section section-5", __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 6
+                    }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "div",
+                    { className: "container", __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 7
+                        }
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "div",
+                        { className: "row", __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 8
+                            }
+                        },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { className: "col-md-10 col-md-offset-1 col-xs-12 col-sm-12", __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 9
+                                }
+                            },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "div",
+                                { className: "row", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 10
+                                    }
+                                },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    { className: "col-md-6 col-sm-6 col-xs-12", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 11
+                                        }
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "h4",
+                                        { className: "stories-title text-right", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 12
+                                            }
+                                        },
+                                        "LEAVE US MESSAGES"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "stories-after", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 13
+                                        }
+                                    })
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    { className: "col-md-6 col-sm-6 col-xs-12", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 15
+                                        }
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "h4",
+                                        { className: "input-title", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 16
+                                            }
+                                        },
+                                        "Name"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", className: "form-control", placeholder: "Name ", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 17
+                                        }
+                                    }),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 18
+                                        }
+                                    }),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "h4",
+                                        { className: "input-title", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 19
+                                            }
+                                        },
+                                        "Messages"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", { className: "form-control", placeholder: "Messages", rows: "5", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 20
+                                        }
+                                    }),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 21
+                                        }
+                                    }),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "button",
+                                        { className: "btn btn-primary btn-block", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 22
+                                            }
+                                        },
+                                        "SEND"
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Section5Component;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["PureComponent"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Section5Component);
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -843,7 +1255,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_section_1__ = __webpack_require__("./pages/components/section-1.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_section_2__ = __webpack_require__("./pages/components/section-2.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_section_3__ = __webpack_require__("./pages/components/section-3.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_footer__ = __webpack_require__("./pages/components/footer.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_section_4__ = __webpack_require__("./pages/components/section-4.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_section_5__ = __webpack_require__("./pages/components/section-5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_footer__ = __webpack_require__("./pages/components/footer.js");
 var _jsxFileName = "/home/qlapa/wedding/pages/index.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -853,6 +1267,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -879,43 +1295,55 @@ var App = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 16
+                        lineNumber: 18
                     }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_head__["a" /* default */], {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 17
+                        lineNumber: 19
                     }
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_header__["a" /* default */], {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 18
+                        lineNumber: 20
                     }
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_section_1__["a" /* default */], {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 19
+                        lineNumber: 21
                     }
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_section_2__["a" /* default */], {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 20
+                        lineNumber: 22
                     }
                 }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_section_3__["a" /* default */], {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 21
+                        lineNumber: 23
                     }
                 }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_footer__["a" /* default */], {
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_section_4__["a" /* default */], {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 22
+                        lineNumber: 24
+                    }
+                }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_section_5__["a" /* default */], {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 25
+                    }
+                }),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_footer__["a" /* default */], {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 26
                     }
                 })
             );

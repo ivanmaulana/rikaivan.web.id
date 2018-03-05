@@ -22,9 +22,17 @@ html, body {
     cursor: pointer;
 }
 
+.header-menu span:hover {
+    color: #00bfa5;
+}
+
 .header-menu span,
 .header-menu-mobile span {
     padding-right: 20px;
+}
+
+.header-menu-mobile-inner {
+    width: 600px;
 }
 
 .web-title {
@@ -34,7 +42,6 @@ html, body {
     cursor: pointer;
 }
 
-
 .btn-header {
     background-color: #00bfa5;
     border-radius: 2px;
@@ -42,8 +49,13 @@ html, body {
     font-size: 12px;
 }
 
+.btn-header:hover {
+    background-color: #00bfa5;
+    opacity: 0.7;
+}
+
 .section {
-    padding: 50px;
+    padding: 60px 0;
 }
 
 .section-1 {
@@ -77,8 +89,9 @@ html, body {
 
 #footer {
     background-color: #444;
-    padding: 30px 0;
+    padding: 20px 0;
     color: #a3a3a3;
+    font-size: 12px;
 }
 
 #footer a {
@@ -92,7 +105,7 @@ html, body {
 }
 
 .quran-surah {
-    font-size: 17px;
+    font-size: 14px;
     font-family: "Roboto slab";
     color: #444;
 }
@@ -138,7 +151,79 @@ html, body {
     font-size: 16px;
 }
 
+.bride,
+.groom {
+    color: #848484;
+    font-size: 16px;
+}
+
+.bride-after,
+.groom-after,
+.stories-after {
+    background-color: #00bfa5;
+    content: '';
+    height: 2px;
+    left: 16px;
+    position: absolute;
+    width: 60px;
+}
+
+.groom-after {
+    background-color: #00b0ff;
+}
+
+.stories-after {
+    background-color: #ffbc00;
+    left: auto;
+    right: 15px;
+    margin-top: 8px;
+}
+
+.bride-name,
+.groom-name {
+    font-family: "Roboto slab";
+    font-weight: 300;
+    padding-top: 20px;
+}
+
+.bride-name + p,
+.groom-name + p {
+    color: #848484;
+    font-size: 12px;
+}
+
+.input-title {
+    font-family: 'Roboto slab', serif;
+}
+
+.download-btn span {
+    border: 1px dashed white;
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-family: "Roboto slab";
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.stories-title {
+    font-family: "Roboto slab";
+}
+
 @media (max-width: 991px) {
+    .download-btn {
+        margin: 30px 0 20px;
+        text-align: left;
+    }
+
+    .download-btn span {
+        font-size: 12px;
+    }
+
+    .download-btn img {
+        width: 12px;
+        margin-left: 30px;
+    }
+
     #header {
         padding-bottom: 0;
     }
@@ -183,9 +268,13 @@ html, body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .section-3 iframe {
         height: 300px;
+    }
+
+    .groom {
+        margin-top: 30px;
     }
 }
 
