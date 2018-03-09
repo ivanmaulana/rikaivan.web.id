@@ -8158,6 +8158,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
     enterModule && enterModule(module);
 })();
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -8169,129 +8171,229 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Section5Component = function (_PureComponent) {
     _inherits(Section5Component, _PureComponent);
 
-    function Section5Component() {
+    function Section5Component(props) {
         _classCallCheck(this, Section5Component);
 
-        return _possibleConstructorReturn(this, (Section5Component.__proto__ || Object.getPrototypeOf(Section5Component)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Section5Component.__proto__ || Object.getPrototypeOf(Section5Component)).call(this, props));
+
+        _this.state = {
+            sender: "",
+            messages: "",
+            email: "",
+            isAttending: true,
+            isLoading: false,
+            isSuccess: false
+        };
+
+        _this.handleChangeState = _this.handleChangeState.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
+        return _this;
     }
 
     _createClass(Section5Component, [{
+        key: "handleChangeState",
+        value: function handleChangeState(name, value) {
+            this.setState(_defineProperty({}, name, value));
+        }
+    }, {
+        key: "handleSubmit",
+        value: function handleSubmit(event) {
+            event.preventDefault();
+
+            var _state = this.state,
+                sender = _state.sender,
+                email = _state.email,
+                messages = _state.messages,
+                isAttending = _state.isAttending;
+
+
+            console.log(sender, email, messages, isAttending);
+        }
+    }, {
         key: "render",
         value: function render() {
+            var _this2 = this;
+
+            var _state2 = this.state,
+                sender = _state2.sender,
+                email = _state2.email,
+                messages = _state2.messages,
+                isAttending = _state2.isAttending;
+
+
+            console.log(sender, email, messages, isAttending);
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
                 { className: "section section-5", __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 6
+                        lineNumber: 52
                     }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
                     { className: "container", __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 7
+                            lineNumber: 53
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "div",
                         { className: "row", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 8
+                                lineNumber: 54
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "div",
                             { className: "col-md-10 col-md-offset-1 col-xs-12 col-sm-12", __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 9
+                                    lineNumber: 55
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 "div",
                                 { className: "row", __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 10
+                                        lineNumber: 56
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     "div",
-                                    { className: "col-md-6 col-sm-6 col-xs-12", __source: {
+                                    { className: "col-sm-6 col-xs-12", __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 11
+                                            lineNumber: 57
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h4",
-                                        { className: "stories-title text-right", __source: {
+                                        "form",
+                                        { onSubmit: this.handleSubmit, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 12
+                                                lineNumber: 58
                                             }
                                         },
-                                        "LEAVE US MESSAGES"
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "stories-after", __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 13
-                                        }
-                                    })
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "div",
-                                    { className: "col-md-6 col-sm-6 col-xs-12", __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 15
-                                        }
-                                    },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h4",
-                                        { className: "input-title", __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "h4",
+                                            { className: "stories-title", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 59
+                                                }
+                                            },
+                                            "LEAVE US MESSAGES"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "stories-after", __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 16
+                                                lineNumber: 62
                                             }
-                                        },
-                                        "Name"
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "text", className: "form-control", placeholder: "Name ", __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 17
-                                        }
-                                    }),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 18
-                                        }
-                                    }),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h4",
-                                        { className: "input-title", __source: {
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+                                            __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 19
+                                                lineNumber: 63
                                             }
-                                        },
-                                        "Messages"
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", { className: "form-control", placeholder: "Messages", rows: "5", __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 20
-                                        }
-                                    }),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
-                                        __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 21
-                                        }
-                                    }),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "button",
-                                        { className: "btn btn-primary btn-block", __source: {
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "h4",
+                                            { className: "input-title", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 65
+                                                }
+                                            },
+                                            "Name"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+                                            value: sender,
+                                            type: "text",
+                                            className: "form-control",
+                                            placeholder: "Name ",
+                                            onChange: function onChange(event) {
+                                                return _this2.handleChangeState("sender", event.target.value);
+                                            },
+                                            required: true,
+                                            __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 22
+                                                lineNumber: 66
                                             }
-                                        },
-                                        "SEND"
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 74
+                                            }
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "h4",
+                                            { className: "input-title", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 76
+                                                }
+                                            },
+                                            "Email"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+                                            value: email,
+                                            type: "email",
+                                            className: "form-control",
+                                            placeholder: "Name ",
+                                            onChange: function onChange(event) {
+                                                return _this2.handleChangeState("email", event.target.value);
+                                            },
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 77
+                                            }
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 84
+                                            }
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "h4",
+                                            { className: "input-title", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 86
+                                                }
+                                            },
+                                            "Messages"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", {
+                                            value: messages,
+                                            className: "form-control",
+                                            placeholder: "Messages",
+                                            rows: "5",
+                                            onChange: function onChange(event) {
+                                                return _this2.handleChangeState("messages", event.target.value);
+                                            },
+                                            required: true,
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 87
+                                            }
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 96
+                                            }
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "button",
+                                            { type: "submit", className: "btn btn-lg btn-primary btn-block", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 97
+                                                }
+                                            },
+                                            "SEND"
+                                        )
                                     )
-                                )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "col-sm-6 col-xs-12", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 100
+                                    }
+                                })
                             )
                         )
                     )

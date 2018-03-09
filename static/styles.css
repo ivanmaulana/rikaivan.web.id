@@ -75,6 +75,7 @@ html, body {
     font-family: "Roboto slab";
     font-size: 46px;
     padding-bottom: 30px;
+    color: white;   
 }
 
 .section-1 p {
@@ -100,7 +101,7 @@ html, body {
 
 .quran-text {
     font-family: "Roboto slab";
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 300;
 }
 
@@ -121,10 +122,14 @@ html, body {
     padding-right: 0;
 }
 
+.section-3 .title {
+    color: white;
+}
+
 .section-3 iframe {
     border: 0;
     width: 100%;
-    height: 400px;
+    height: 408pxpx;
 }
 
 .wedding-map {
@@ -175,7 +180,6 @@ html, body {
 .stories-after {
     background-color: #ffbc00;
     left: auto;
-    right: 15px;
     margin-top: 8px;
 }
 
@@ -260,7 +264,7 @@ html, body {
     }
 
     .section-3 iframe {
-        height: 400px;
+        height: 408pxpx;
     }
 
     .wedding-info {
@@ -282,4 +286,25 @@ html, body {
     #header {
         padding: 20px;
     }
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.btn-primary {
+    background-color: #00bfa5;
+    border-color: transparent;
+}
+
+.form-control {
+    border-radius: 0;
+    border-color: #00bfa5;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #5BC3BE;
+    border-color: transparent;
 }
