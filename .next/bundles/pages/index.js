@@ -6846,38 +6846,60 @@ var HeadComponent = function (_PureComponent) {
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 "div",
-                                { className: "pull-left", __source: {
+                                {
+                                    __source: {
                                         fileName: _jsxFileName,
                                         lineNumber: 10
                                     }
                                 },
-                                "Handcrafted by ",
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "a",
-                                    { href: "https://linkedin.com/in/ivanmaulana", target: "_blank", __source: {
+                                    "div",
+                                    {
+                                        __source: {
                                             fileName: _jsxFileName,
                                             lineNumber: 11
                                         }
                                     },
-                                    "Ivan Maulana"
-                                ),
-                                ".",
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", { className: "visible-xs", __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 12
-                                    }
-                                }),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", { className: "visible-xs", __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 13
-                                    }
-                                })
+                                    "Handcrafted by ",
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "a",
+                                        { href: "https://linkedin.com/in/ivanmaulana", target: "_blank", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 12
+                                            }
+                                        },
+                                        "Ivan Maulana"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "div",
+                                        { className: "pull-right hidden-xs", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 13
+                                            }
+                                        },
+                                        "Built with ",
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "a",
+                                            { href: "https://github.com/zeit/next.js/", target: "_blank", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 14
+                                                }
+                                            },
+                                            "Next.js framework"
+                                        )
+                                    )
+                                )
                             ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", { className: "visible-xs", __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 18
+                                }
+                            }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 "div",
-                                { className: "pull-left visible-xs", __source: {
+                                { className: "visible-xs", __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 15
+                                        lineNumber: 19
                                     }
                                 },
                                 "Built with ",
@@ -6885,31 +6907,11 @@ var HeadComponent = function (_PureComponent) {
                                     "a",
                                     { href: "https://github.com/zeit/next.js/", target: "_blank", __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 16
+                                            lineNumber: 20
                                         }
                                     },
                                     "Next.js framework"
-                                ),
-                                ". Inspired by Google site's design."
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "pull-right hidden-xs", __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 18
-                                    }
-                                },
-                                "Built with ",
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "a",
-                                    { href: "https://github.com/zeit/next.js/", target: "_blank", __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 19
-                                        }
-                                    },
-                                    "Next.js framework"
-                                ),
-                                ". Inspired by Google site's design."
+                                )
                             )
                         )
                     )
@@ -7225,10 +7227,40 @@ var HeadComponent = function (_PureComponent) {
                             })
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "span",
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 15
+                                }
+                            },
+                            "Where"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "span",
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 16
+                                }
+                            },
+                            "When"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "span",
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 17
+                                }
+                            },
+                            "Bride & Groom"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "btn",
                             { className: "btn btn-primary btn-header", __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 15
+                                    lineNumber: 18
                                 }
                             },
                             "Leave messages"
@@ -7239,51 +7271,16 @@ var HeadComponent = function (_PureComponent) {
                     "div",
                     { className: "container visible-xs visible-sm header-menu-mobile header-menu-mobile-outer", __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 18
+                            lineNumber: 21
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "div",
                         { className: "header-menu-mobile-inner", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 19
+                                lineNumber: 22
                             }
                         },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "span",
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 20
-                                }
-                            },
-                            "Home"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "span",
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 21
-                                }
-                            },
-                            "Get Invitation ",
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/static/download.png", width: "16", __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 21
-                                }
-                            })
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "span",
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 22
-                                }
-                            },
-                            "Home"
-                        ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "span",
                             {
@@ -7302,7 +7299,12 @@ var HeadComponent = function (_PureComponent) {
                                     lineNumber: 24
                                 }
                             },
-                            "Home"
+                            "Get Invitation ",
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/static/download.png", width: "16", __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 24
+                                }
+                            })
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "span",
@@ -7312,7 +7314,7 @@ var HeadComponent = function (_PureComponent) {
                                     lineNumber: 25
                                 }
                             },
-                            "Home"
+                            "Where"
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "span",
@@ -7322,7 +7324,17 @@ var HeadComponent = function (_PureComponent) {
                                     lineNumber: 26
                                 }
                             },
-                            "Home"
+                            "When"
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "span",
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 27
+                                }
+                            },
+                            "Bride & Groom"
                         )
                     )
                 )
@@ -7780,7 +7792,7 @@ var Section3Component = function (_PureComponent) {
                             lineNumber: 7
                         }
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("iframe", { src: "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1983.196957444171!2d106.7921418!3d-6.2116656!3m2!1i1024!2i768!4f13.1!3m2!1m1!2sMusholla+As+Salaam!5e0!3m2!1sen!2sid!4v1519505752015", frameborder: "0", style: { border: 0 }, allowfullscreen: true, __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("iframe", { src: "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1983.196957444171!2d106.7921418!3d-6.2116656!3m2!1i1024!2i768!4f13.1!3m2!1m1!2sMusholla+As+Salaam!5e0!3m2!1sen!2sid!4v1519505752015", frameBorder: "0", style: { border: 0 }, allowFullScreen: true, __source: {
                             fileName: _jsxFileName,
                             lineNumber: 8
                         }
@@ -8168,6 +8180,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+function toTitleCase(str) {
+    if (str === null || str === undefined) return str;
+    str = str.trim();
+    return str.replace(/\w\S*/g, function (txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+}
+
 var Section5Component = function (_PureComponent) {
     _inherits(Section5Component, _PureComponent);
 
@@ -8180,8 +8200,9 @@ var Section5Component = function (_PureComponent) {
             sender: "",
             messages: "",
             email: "",
-            isAttending: true,
+            isAttending: null,
             isLoading: false,
+            isSubmitting: false,
             isSuccess: false
         };
 
@@ -8207,6 +8228,11 @@ var Section5Component = function (_PureComponent) {
                 isAttending = _state.isAttending;
 
 
+            this.setState({
+                isLoading: true,
+                isSubmitting: true
+            });
+
             console.log(sender, email, messages, isAttending);
         }
     }, {
@@ -8218,7 +8244,9 @@ var Section5Component = function (_PureComponent) {
                 sender = _state2.sender,
                 email = _state2.email,
                 messages = _state2.messages,
-                isAttending = _state2.isAttending;
+                isAttending = _state2.isAttending,
+                isLoading = _state2.isLoading,
+                isSubmitting = _state2.isSubmitting;
 
 
             console.log(sender, email, messages, isAttending);
@@ -8227,173 +8255,498 @@ var Section5Component = function (_PureComponent) {
                 "div",
                 { className: "section section-5", __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 52
+                        lineNumber: 66
                     }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
                     { className: "container", __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 53
+                            lineNumber: 67
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "div",
                         { className: "row", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 54
+                                lineNumber: 68
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "div",
                             { className: "col-md-10 col-md-offset-1 col-xs-12 col-sm-12", __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 55
+                                    lineNumber: 69
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 "div",
                                 { className: "row", __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 56
+                                        lineNumber: 70
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     "div",
-                                    { className: "col-sm-6 col-xs-12", __source: {
+                                    { className: "col-xs-12", __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 57
+                                            lineNumber: 71
                                         }
                                     },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "h4",
+                                        { className: "stories-title", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 72
+                                            }
+                                        },
+                                        "LEAVE US MESSAGES"
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "stories-after", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 75
+                                        }
+                                    }),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 76
+                                        }
+                                    }),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         "form",
                                         { onSubmit: this.handleSubmit, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 58
+                                                lineNumber: 78
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "h4",
-                                            { className: "stories-title", __source: {
+                                            "div",
+                                            { className: "row", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 59
+                                                    lineNumber: 79
                                                 }
                                             },
-                                            "LEAVE US MESSAGES"
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "col-sm-6 col-xs-12", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 80
+                                                }
+                                            }),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "col-sm-6 col-xs-12", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 83
+                                                }
+                                            })
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "stories-after", __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 62
-                                            }
-                                        }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 63
-                                            }
-                                        }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "h4",
                                             { className: "input-title", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 65
+                                                    lineNumber: 88
                                                 }
                                             },
                                             "Name"
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-                                            value: sender,
-                                            type: "text",
-                                            className: "form-control",
-                                            placeholder: "Name ",
-                                            onChange: function onChange(event) {
-                                                return _this2.handleChangeState("sender", event.target.value);
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "div",
+                                            { className: "row", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 89
+                                                }
                                             },
-                                            required: true,
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 66
-                                            }
-                                        }),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "div",
+                                                { className: "col-sm-6 col-xs-12", __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 90
+                                                    }
+                                                },
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+                                                    value: sender,
+                                                    type: "text",
+                                                    className: "form-control",
+                                                    placeholder: "Name ",
+                                                    onChange: function onChange(event) {
+                                                        return _this2.handleChangeState("sender", event.target.value);
+                                                    },
+                                                    required: true,
+                                                    __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 91
+                                                    }
+                                                })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "div",
+                                                { className: "col-sm-6 col-xs-12 input-tips", __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 100
+                                                    }
+                                                },
+                                                sender && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    "p",
+                                                    {
+                                                        __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 102
+                                                        }
+                                                    },
+                                                    "Hi, ",
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "b",
+                                                        {
+                                                            __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 102
+                                                            }
+                                                        },
+                                                        toTitleCase(sender)
+                                                    ),
+                                                    ". Thanks for leaving us messages."
+                                                )
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "h4",
+                                            { className: "input-title", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 108
+                                                }
+                                            },
+                                            "Attending ?"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "div",
+                                            { className: "row", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 109
+                                                }
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "div",
+                                                { className: "col-sm-6 col-xs-12", __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 110
+                                                    }
+                                                },
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    "div",
+                                                    { className: "row", __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 111
+                                                        }
+                                                    },
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "div",
+                                                        { className: "col-xs-6", style: { paddingRight: "7px" }, __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 112
+                                                            }
+                                                        },
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "div",
+                                                            {
+                                                                className: "attending-option text-center" + (isAttending === true ? " active" : ""),
+                                                                onClick: function onClick() {
+                                                                    return _this2.handleChangeState("isAttending", true);
+                                                                },
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 113
+                                                                }
+                                                            },
+                                                            "YES"
+                                                        )
+                                                    ),
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "div",
+                                                        { className: "col-xs-6", style: { paddingLeft: "7px" }, __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 120
+                                                            }
+                                                        },
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "div",
+                                                            {
+                                                                className: "attending-option text-center" + (isAttending === false ? " active" : ""),
+                                                                onClick: function onClick() {
+                                                                    return _this2.handleChangeState("isAttending", false);
+                                                                },
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 121
+                                                                }
+                                                            },
+                                                            "NO"
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "div",
+                                                { id: "attending-messages", className: "col-sm-6 col-xs-12", __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 130
+                                                    }
+                                                },
+                                                isAttending != null && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    "div",
+                                                    { className: "input-tips", __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 132
+                                                        }
+                                                    },
+                                                    isAttending ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "span",
+                                                        {
+                                                            __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 134
+                                                            }
+                                                        },
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "b",
+                                                            {
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 134
+                                                                }
+                                                            },
+                                                            "Great!"
+                                                        ),
+                                                        " See you there."
+                                                    ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "span",
+                                                        {
+                                                            __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 135
+                                                            }
+                                                        },
+                                                        "Hopefully we can meet you there."
+                                                    )
+                                                )
+                                            )
+                                        ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 74
+                                                lineNumber: 142
                                             }
                                         }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "h4",
                                             { className: "input-title", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 76
+                                                    lineNumber: 144
                                                 }
                                             },
                                             "Email"
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-                                            value: email,
-                                            type: "email",
-                                            className: "form-control",
-                                            placeholder: "Name ",
-                                            onChange: function onChange(event) {
-                                                return _this2.handleChangeState("email", event.target.value);
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "div",
+                                            { className: "row", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 145
+                                                }
                                             },
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 77
-                                            }
-                                        }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 84
-                                            }
-                                        }),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "div",
+                                                { className: "col-sm-6 col-xs-12", __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 146
+                                                    }
+                                                },
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+                                                    value: email,
+                                                    type: "email",
+                                                    className: "form-control",
+                                                    placeholder: "Name ",
+                                                    onChange: function onChange(event) {
+                                                        return _this2.handleChangeState("email", event.target.value);
+                                                    },
+                                                    __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 147
+                                                    }
+                                                })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "div",
+                                                { className: "col-sm-6 col-xs-12", __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 155
+                                                    }
+                                                },
+                                                email && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    "div",
+                                                    { className: "input-tips", __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 157
+                                                        }
+                                                    },
+                                                    "We'll send your photo to ",
+                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "b",
+                                                        {
+                                                            __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 158
+                                                            }
+                                                        },
+                                                        email
+                                                    )
+                                                )
+                                            )
+                                        ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "h4",
                                             { className: "input-title", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 86
+                                                    lineNumber: 165
                                                 }
                                             },
                                             "Messages"
                                         ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", {
-                                            value: messages,
-                                            className: "form-control",
-                                            placeholder: "Messages",
-                                            rows: "5",
-                                            onChange: function onChange(event) {
-                                                return _this2.handleChangeState("messages", event.target.value);
-                                            },
-                                            required: true,
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 87
-                                            }
-                                        }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 96
-                                            }
-                                        }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "button",
-                                            { type: "submit", className: "btn btn-lg btn-primary btn-block", __source: {
+                                            "div",
+                                            { className: "row", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 97
+                                                    lineNumber: 166
                                                 }
                                             },
-                                            "SEND"
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "div",
+                                                { className: "col-sm-6 col-xs-12", __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 167
+                                                    }
+                                                },
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", {
+                                                    value: messages,
+                                                    className: "form-control",
+                                                    placeholder: "Messages",
+                                                    rows: "5",
+                                                    onChange: function onChange(event) {
+                                                        return _this2.handleChangeState("messages", event.target.value);
+                                                    },
+                                                    required: true,
+                                                    __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 168
+                                                    }
+                                                })
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "div",
+                                                { className: "col-sm-6 col-xs-12 input-tips", __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 177
+                                                    }
+                                                },
+                                                messages != "" && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    "div",
+                                                    {
+                                                        __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 179
+                                                        }
+                                                    },
+                                                    messages.length < 50 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "span",
+                                                        {
+                                                            __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 181
+                                                            }
+                                                        },
+                                                        "Thanks for the message. But r u sure not to send us a longer one ?"
+                                                    ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "span",
+                                                        {
+                                                            __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 182
+                                                            }
+                                                        },
+                                                        "Thanks for the message, ",
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "b",
+                                                            {
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 182
+                                                                }
+                                                            },
+                                                            sender
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "div",
+                                            { className: "row", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 190
+                                                }
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "div",
+                                                { className: "col-sm-6 col-xs-12", __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 191
+                                                    }
+                                                },
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    "button",
+                                                    { id: "btn-submit", type: "submit", className: "btn btn-lg btn-primary btn-block", disabled: isLoading, __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 192
+                                                        }
+                                                    },
+                                                    isLoading ? "SENDING....." : "SEND"
+                                                )
+                                            ),
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "div",
+                                                { className: "col-sm-6 col-xs-12 input-tips", __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 199
+                                                    }
+                                                },
+                                                isSubmitting && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    "div",
+                                                    {
+                                                        __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 201
+                                                        }
+                                                    },
+                                                    isLoading ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "span",
+                                                        {
+                                                            __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 203
+                                                            }
+                                                        },
+                                                        "Saving your messages..."
+                                                    ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "span",
+                                                        {
+                                                            __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 204
+                                                            }
+                                                        },
+                                                        "Saved. Thanks."
+                                                    )
+                                                )
+                                            )
                                         )
                                     )
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "col-sm-6 col-xs-12", __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 100
-                                    }
-                                })
+                                )
                             )
                         )
                     )
@@ -8425,6 +8778,7 @@ var _default = Section5Component;
         return;
     }
 
+    reactHotLoader.register(toTitleCase, "toTitleCase", "/home/qlapa/wedding/pages/components/section-5.js");
     reactHotLoader.register(Section5Component, "Section5Component", "/home/qlapa/wedding/pages/components/section-5.js");
     reactHotLoader.register(_default, "default", "/home/qlapa/wedding/pages/components/section-5.js");
     leaveModule(module);

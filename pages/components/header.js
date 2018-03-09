@@ -12,6 +12,9 @@ class HeadComponent extends PureComponent {
                     <div className="visible-md visible-lg pull-right header-menu">
                         <span>Home</span>
                         <span>Get Invitation <img src="/static/download.png" width="16" /></span>
+                        <span>Where</span>
+                        <span>When</span>
+                        <span>Bride & Groom</span>
                         <btn className="btn btn-primary btn-header">Leave messages</btn>
                     </div>
                 </div>
@@ -19,11 +22,9 @@ class HeadComponent extends PureComponent {
                     <div className="header-menu-mobile-inner">
                         <span>Home</span>
                         <span>Get Invitation <img src="/static/download.png" width="16" /></span>
-                        <span>Home</span>
-                        <span>Home</span>
-                        <span>Home</span>
-                        <span>Home</span>
-                        <span>Home</span>
+                        <span>Where</span>
+                        <span>When</span>
+                        <span>Bride & Groom</span>
                     </div>
                 </div>
             </div>
