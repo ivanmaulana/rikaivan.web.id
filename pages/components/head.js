@@ -13,6 +13,7 @@ class HeadComponent extends PureComponent {
                 <link href="/static/bootstrap.min.css" rel="stylesheet" />
                 <link href="/static/styles.css" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,300|Roboto:300,400" rel="stylesheet" />
+                <link rel="shortcut icon" href="/static/favicon.png" />
             </Head>
         );
     }

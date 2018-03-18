@@ -53,10 +53,10 @@ class Section5Component extends PureComponent {
             name,
             email,
             messages,
-            isAttending
+            isAttending: isAttending ? "true" : "false"
         };
 
-        fetchPost("http://localhost/api/index.php", params, "json")
+        fetchPost("/api/", params, "json")
             .then(response => {
                 if (response.status === "SUCCESS") {
                     this.setState({

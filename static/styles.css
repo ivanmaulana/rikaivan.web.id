@@ -33,7 +33,7 @@ html, body {
 }
 
 .header-menu-mobile-inner {
-    width: 410px;
+    width: 370px;
 }
 
 .web-title {
@@ -363,6 +363,15 @@ html, body {
     box-shadow: 0 7px 20px -5px rgba(0,0,0,0.2);
 }
 
+.download-btn a {
+    text-decoration: none;
+}
+
+#header a {
+    text-decoration: none;
+    color: #848484;
+}
+
 @media (max-width: 767px) {
     #btn-submit {
         margin-top: 20px;
@@ -373,7 +382,11 @@ html, body {
     }
 
     .image-section-1 {
-        margin-top: 80px;
+        margin-top: 60px;
+    }
+
+    .form-control {
+        margin-bottom: 10px;
     }
 }
 

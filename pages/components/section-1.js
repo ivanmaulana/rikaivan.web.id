@@ -14,11 +14,13 @@ class Section1Component extends PureComponent {
                                 <div className="col-xs-12 col-md-6 col-sm-6 download-btn" style={{marginTop: "18px"}}>
                                     <h1>We're Getting Married.</h1>
                                     <p>Together with our parents. <br /> We, invite you to share in the joy of beginning our new life together.</p>
-                                    <span>
-                                        Get our invitation (.pdf soft copy) <img src="/static/download.png" width="16" />
-                                    </span>
+                                    <a href="/static/rikaivan-invitation.pdf" target="_blank">
+                                        <span>
+                                            Get our invitation (.pdf soft copy) <img src="/static/download.png" width="16" />
+                                        </span>
+                                    </a>
                                 </div>
-                                <div className="col-xs-8 col-xs-offset-2 visible-xs">
+                                <div className="col-xs-10 col-xs-offset-1 visible-xs">
                                     <img src="/static/hand.jpeg" className="img-responsive image-section-1" />
                                 </div>
                             </div>

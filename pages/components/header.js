@@ -27,6 +27,7 @@ class HeadComponent extends PureComponent {
                     </div>
                     <div className="visible-md visible-lg pull-right header-menu">
                         <span onClick={() => this.handleScroll("home")}>Home</span>
+                        <span><a href="/static/rikaivan-invitation.pdf" target="_blank">Get Invitation</a></span>
                         <span onClick={() => this.handleScroll("wedding")}>The Wedding</span>
                         <span onClick={() => this.handleScroll("bride-groom")}>Bride & Groom</span>
                         <button onClick={() => this.handleScroll("messages")} className="btn btn-primary btn-header">Leave messages</button>
@@ -35,6 +36,7 @@ class HeadComponent extends PureComponent {
                 <div className="container visible-xs visible-sm header-menu-mobile header-menu-mobile-outer">
                     <div className="header-menu-mobile-inner">
                         <span onClick={() => this.handleScroll("home")}>Home</span>
+                        <span><a href="/static/rikaivan-invitation.pdf" target="_blank">Get Invitation</a></span>
                         <span onClick={() => this.handleScroll("wedding")}>The Wedding</span>
                         <span onClick={() => this.handleScroll("bride-groom")}>Bride & Groom</span>
                     </div>
