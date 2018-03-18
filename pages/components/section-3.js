@@ -3,7 +3,7 @@ import React, {PureComponent} from "react";
 class Section3Component extends PureComponent {
     render() {
         return(
-            <div className="section section-3">
+            <div id="wedding" className="section section-3">
                 <div className="row section-3-container">
                     <div className="col-xs-12">
                         <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">

@@ -325,7 +325,6 @@ html, body {
 
 .form-control {
     border-radius: 0;
-    margin-bottom: 14px;
 }
 
 .form-control:focus {
@@ -359,6 +358,11 @@ html, body {
     padding-bottom: 10px;
 }
 
+.image-section-1 {
+    margin-top: 72px;
+    box-shadow: 0 7px 20px -5px rgba(0,0,0,0.2);
+}
+
 @media (max-width: 767px) {
     #btn-submit {
         margin-top: 20px;
@@ -367,14 +371,20 @@ html, body {
     #attending-messages {
         margin-top: 10px;
     }
+
+    .image-section-1 {
+        margin-top: 80px;
+    }
 }
 
 @media (min-width: 768px) {
     .input-tips {
         padding-top: 10px;
     }
-
-    .form-control {
-        margin-bottom: 24px;
-    }
 }
+
+.success-messages {
+    font-family: "Roboto slab";
+}
+
+body, .smooth-container { scroll-behavior: smooth }

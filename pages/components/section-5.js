@@ -1,4 +1,7 @@
 import React, {PureComponent} from "react";
+import {
+    fetchPost
+} from "../functions/fetchers";
 
 function toTitleCase(str) {
     if (str === null || str === undefined) return str;
@@ -11,7 +14,7 @@ class Section5Component extends PureComponent {
         super(props);
 
         this.state = {
-            sender: "",
+            name: "",
             messages: "",
             email: "",
             isAttending: null,
@@ -34,7 +37,7 @@ class Section5Component extends PureComponent {
         event.preventDefault();
 
         const {
-            sender,
+            name,
             email,
             messages,
             isAttending
@@ -42,28 +45,43 @@ class Section5Component extends PureComponent {
 
         this.setState({
             isLoading: true,
-            isSubmitting: true
+            isSubmitting: true,
+            isSuccess: false
         });
 
-        console.log(sender, email, messages, isAttending);
+        const params = {
+            name,
+            email,
+            messages,
+            isAttending
+        };
+
+        fetchPost("http://localhost/api/index.php", params, "json")
+            .then(response => {
+                if (response.status === "SUCCESS") {
+                    this.setState({
+                        isLoading: false,
+                        isSubmitting: false,
+                        isSuccess: true
+                    });
+                }
+            });
     }
 
 
     render() {
         const {
-            sender,
+            name,
             email,
             messages,
             isAttending,
             isLoading,
-            isSubmitting
+            isSubmitting,
+            isSuccess
         } = this.state;
 
-        console.log(sender, email, messages, isAttending);
-
-
         return(
-            <div className="section section-5">
+            <div id="messages" className="section section-5">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6 col-md-offset-3 col-xs-12 col-sm-8 col-sm-offset-2">
@@ -80,16 +98,16 @@ class Section5Component extends PureComponent {
                                         <div className="row">
                                             <div className="col-xs-12">
                                                 <input
-                                                    value={sender}
+                                                    value={name}
                                                     type="text"
                                                     className="form-control"
                                                     placeholder="Name "
-                                                    onChange={event => this.handleChangeState("sender", event.target.value)}
+                                                    onChange={event => this.handleChangeState("name", event.target.value)}
                                                     required
                                                 />
                                                 <div className="input-tips">
-                                                    {sender &&
-                                                        <p>Hi, <b>{toTitleCase(sender)}</b>. Thanks for leaving us messages.</p>
+                                                    {name &&
+                                                        <p>Hi, <b>{toTitleCase(name)}</b>. Thanks for leaving us messages.</p>
                                                     }
                                                 </div>
                                             </div>
@@ -116,7 +134,7 @@ class Section5Component extends PureComponent {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div style={{paddingTop: "10px"}}>
+                                                <div>
                                                     {isAttending != null &&
                                                         <div className="input-tips">
                                                             {isAttending ?
@@ -167,7 +185,7 @@ class Section5Component extends PureComponent {
                                                         <div>
                                                             {messages.length < 50 ?
                                                                 <span>Thanks for the message. But r u sure not to send us a longer one ?</span> :
-                                                                <span>Thanks for the message, <b>{sender}</b></span>
+                                                                <span>Thanks for the message, <b>{toTitleCase(name)}</b></span>
                                                             }
                                                         </div>
                                                     }
@@ -175,9 +193,9 @@ class Section5Component extends PureComponent {
                                             </div>
                                         </div>
 
-                                        <div className="row">
+                                        <div className="row" style={{marginTop: "15px"}}>
                                             <div className="col-xs-12">
-                                                <button id="btn-submit" type="submit" className="btn btn-lg btn-primary btn-block" disabled={isLoading}>
+                                                <button id="btn-submit" type="submit" className="btn btn-lg btn-primary btn-block" disabled={isSubmitting}>
                                                     {isLoading ?
                                                         "SENDING....." :
                                                         "SEND"
@@ -191,6 +209,12 @@ class Section5Component extends PureComponent {
                                                                 <span>Saved. Thanks.</span>
                                                             }
                                                         </div>
+                                                    }
+
+                                                    {isSuccess &&
+                                                        <h3 className="text-center success-messages">
+                                                            <b>Thanks for your messages</b>
+                                                        </h3>
                                                     }
                                                 </div>
                                             </div>

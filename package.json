@@ -3,7 +3,8 @@
     "next": "^5.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "smooth-scroll": "^12.1.5"
+    "smooth-scroll": "^12.1.5",
+    "zenscroll": "^4.0.2"
   },
   "scripts": {
     "dev": "next",

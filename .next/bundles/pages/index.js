@@ -6780,6 +6780,373 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
+/***/ "./node_modules/zenscroll/zenscroll.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+ * Zenscroll 4.0.2
+ * https://github.com/zengabor/zenscroll/
+ *
+ * Copyright 2015–2018 Gabor Lenard
+ *
+ * This is free and unencumbered software released into the public domain.
+ * 
+ * Anyone is free to copy, modify, publish, use, compile, sell, or
+ * distribute this software, either in source code form or as a compiled
+ * binary, for any purpose, commercial or non-commercial, and by any
+ * means.
+ * 
+ * In jurisdictions that recognize copyright laws, the author or authors
+ * of this software dedicate any and all copyright interest in the
+ * software to the public domain. We make this dedication for the benefit
+ * of the public at large and to the detriment of our heirs and
+ * successors. We intend this dedication to be an overt act of
+ * relinquishment in perpetuity of all present and future rights to this
+ * software under copyright law.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ * 
+ * For more information, please refer to <http://unlicense.org>
+ * 
+ */
+
+/*jshint devel:true, asi:true */
+
+/*global define, module */
+
+
+(function (root, factory) {
+	if (true) {
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory()),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
+	} else if (typeof module === "object" && module.exports) {
+		module.exports = factory()
+	} else {
+		(function install() {
+			// To make sure Zenscroll can be referenced from the header, before `body` is available
+			if (document && document.body) {
+				root.zenscroll = factory()
+			} else {
+				// retry 9ms later
+				setTimeout(install, 9)
+			}
+		})()
+	}
+}(this, function () {
+	"use strict"
+
+
+	// Detect if the browser already supports native smooth scrolling (e.g., Firefox 36+ and Chrome 49+) and it is enabled:
+	var isNativeSmoothScrollEnabledOn = function (elem) {
+		return elem && "getComputedStyle" in window &&
+			window.getComputedStyle(elem)["scroll-behavior"] === "smooth"
+	}
+
+
+	// Exit if it’s not a browser environment:
+	if (typeof window === "undefined" || !("document" in window)) {
+		return {}
+	}
+
+
+	var makeScroller = function (container, defaultDuration, edgeOffset) {
+
+		// Use defaults if not provided
+		defaultDuration = defaultDuration || 999 //ms
+		if (!edgeOffset && edgeOffset !== 0) {
+			// When scrolling, this amount of distance is kept from the edges of the container:
+			edgeOffset = 9 //px
+		}
+
+		// Handling the life-cycle of the scroller
+		var scrollTimeoutId
+		var setScrollTimeoutId = function (newValue) {
+			scrollTimeoutId = newValue
+		}
+
+		/**
+		 * Stop the current smooth scroll operation immediately
+		 */
+		var stopScroll = function () {
+			clearTimeout(scrollTimeoutId)
+			setScrollTimeoutId(0)
+		}
+
+		var getTopWithEdgeOffset = function (elem) {
+			return Math.max(0, container.getTopOf(elem) - edgeOffset)
+		}
+
+		/**
+		 * Scrolls to a specific vertical position in the document.
+		 *
+		 * @param {targetY} The vertical position within the document.
+		 * @param {duration} Optionally the duration of the scroll operation.
+		 *        If not provided the default duration is used.
+		 * @param {onDone} An optional callback function to be invoked once the scroll finished.
+		 */
+		var scrollToY = function (targetY, duration, onDone) {
+			stopScroll()
+			if (duration === 0 || (duration && duration < 0) || isNativeSmoothScrollEnabledOn(container.body)) {
+				container.toY(targetY)
+				if (onDone) {
+					onDone()
+				}
+			} else {
+				var startY = container.getY()
+				var distance = Math.max(0, targetY) - startY
+				var startTime = new Date().getTime()
+				duration = duration || Math.min(Math.abs(distance), defaultDuration);
+				(function loopScroll() {
+					setScrollTimeoutId(setTimeout(function () {
+						// Calculate percentage:
+						var p = Math.min(1, (new Date().getTime() - startTime) / duration)
+						// Calculate the absolute vertical position:
+						var y = Math.max(0, Math.floor(startY + distance*(p < 0.5 ? 2*p*p : p*(4 - p*2)-1)))
+						container.toY(y)
+						if (p < 1 && (container.getHeight() + y) < container.body.scrollHeight) {
+							loopScroll()
+						} else {
+							setTimeout(stopScroll, 99) // with cooldown time
+							if (onDone) {
+								onDone()
+							}
+						}
+					}, 9))
+				})()
+			}
+		}
+
+		/**
+		 * Scrolls to the top of a specific element.
+		 *
+		 * @param {elem} The element to scroll to.
+		 * @param {duration} Optionally the duration of the scroll operation.
+		 * @param {onDone} An optional callback function to be invoked once the scroll finished.
+		 */
+		var scrollToElem = function (elem, duration, onDone) {
+			scrollToY(getTopWithEdgeOffset(elem), duration, onDone)
+		}
+
+		/**
+		 * Scrolls an element into view if necessary.
+		 *
+		 * @param {elem} The element.
+		 * @param {duration} Optionally the duration of the scroll operation.
+		 * @param {onDone} An optional callback function to be invoked once the scroll finished.
+		 */
+		var scrollIntoView = function (elem, duration, onDone) {
+			var elemHeight = elem.getBoundingClientRect().height
+			var elemBottom = container.getTopOf(elem) + elemHeight
+			var containerHeight = container.getHeight()
+			var y = container.getY()
+			var containerBottom = y + containerHeight
+			if (getTopWithEdgeOffset(elem) < y || (elemHeight + edgeOffset) > containerHeight) {
+				// Element is clipped at top or is higher than screen.
+				scrollToElem(elem, duration, onDone)
+			} else if ((elemBottom + edgeOffset) > containerBottom) {
+				// Element is clipped at the bottom.
+				scrollToY(elemBottom - containerHeight + edgeOffset, duration, onDone)
+			} else if (onDone) {
+				onDone()
+			}
+		}
+
+		/**
+		 * Scrolls to the center of an element.
+		 *
+		 * @param {elem} The element.
+		 * @param {duration} Optionally the duration of the scroll operation.
+		 * @param {offset} Optionally the offset of the top of the element from the center of the screen.
+		 *        A value of 0 is ignored.
+		 * @param {onDone} An optional callback function to be invoked once the scroll finished.
+		 */
+		var scrollToCenterOf = function (elem, duration, offset, onDone) {
+			scrollToY(Math.max(0, container.getTopOf(elem) - container.getHeight()/2 + (offset || elem.getBoundingClientRect().height/2)), duration, onDone)
+		}
+
+		/**
+		 * Changes default settings for this scroller.
+		 *
+		 * @param {newDefaultDuration} Optionally a new value for default duration, used for each scroll method by default.
+		 *        Ignored if null or undefined.
+		 * @param {newEdgeOffset} Optionally a new value for the edge offset, used by each scroll method by default. Ignored if null or undefined.
+		 * @returns An object with the current values.
+		 */
+		var setup = function (newDefaultDuration, newEdgeOffset) {
+			if (newDefaultDuration === 0 || newDefaultDuration) {
+				defaultDuration = newDefaultDuration
+			}
+			if (newEdgeOffset === 0 || newEdgeOffset) {
+				edgeOffset = newEdgeOffset
+			}
+			return {
+				defaultDuration: defaultDuration,
+				edgeOffset: edgeOffset
+			}
+		}
+
+		return {
+			setup: setup,
+			to: scrollToElem,
+			toY: scrollToY,
+			intoView: scrollIntoView,
+			center: scrollToCenterOf,
+			stop: stopScroll,
+			moving: function () { return !!scrollTimeoutId },
+			getY: container.getY,
+			getTopOf: container.getTopOf
+		}
+
+	}
+
+
+	var docElem = document.documentElement
+	var getDocY = function () { return window.scrollY || docElem.scrollTop }
+
+	// Create a scroller for the document:
+	var zenscroll = makeScroller({
+		body: document.scrollingElement || document.body,
+		toY: function (y) { window.scrollTo(0, y) },
+		getY: getDocY,
+		getHeight: function () { return window.innerHeight || docElem.clientHeight },
+		getTopOf: function (elem) { return elem.getBoundingClientRect().top + getDocY() - docElem.offsetTop }
+	})
+
+
+	/**
+	 * Creates a scroller from the provided container element (e.g., a DIV)
+	 *
+	 * @param {scrollContainer} The vertical position within the document.
+	 * @param {defaultDuration} Optionally a value for default duration, used for each scroll method by default.
+	 *        Ignored if 0 or null or undefined.
+	 * @param {edgeOffset} Optionally a value for the edge offset, used by each scroll method by default. 
+	 *        Ignored if null or undefined.
+	 * @returns A scroller object, similar to `zenscroll` but controlling the provided element.
+	 */
+	zenscroll.createScroller = function (scrollContainer, defaultDuration, edgeOffset) {
+		return makeScroller({
+			body: scrollContainer,
+			toY: function (y) { scrollContainer.scrollTop = y },
+			getY: function () { return scrollContainer.scrollTop },
+			getHeight: function () { return Math.min(scrollContainer.clientHeight, window.innerHeight || docElem.clientHeight) },
+			getTopOf: function (elem) { return elem.offsetTop }
+		}, defaultDuration, edgeOffset)
+	}
+
+
+	// Automatic link-smoothing on achors
+	// Exclude IE8- or when native is enabled or Zenscroll auto- is disabled
+	if ("addEventListener" in window && !window.noZensmooth && !isNativeSmoothScrollEnabledOn(document.body)) {
+
+		var isHistorySupported = "history" in window && "pushState" in history
+		var isScrollRestorationSupported = isHistorySupported && "scrollRestoration" in history
+
+		// On first load & refresh make sure the browser restores the position first
+		if (isScrollRestorationSupported) {
+			history.scrollRestoration = "auto"
+		}
+
+		window.addEventListener("load", function () {
+
+			if (isScrollRestorationSupported) {
+				// Set it to manual
+				setTimeout(function () { history.scrollRestoration = "manual" }, 9)
+				window.addEventListener("popstate", function (event) {
+					if (event.state && "zenscrollY" in event.state) {
+						zenscroll.toY(event.state.zenscrollY)
+					}
+				}, false)
+			}
+
+			// Add edge offset on first load if necessary
+			// This may not work on IE (or older computer?) as it requires more timeout, around 100 ms
+			if (window.location.hash) {
+				setTimeout(function () {
+					// Adjustment is only needed if there is an edge offset:
+					var edgeOffset = zenscroll.setup().edgeOffset
+					if (edgeOffset) {
+						var targetElem = document.getElementById(window.location.href.split("#")[1])
+						if (targetElem) {
+							var targetY = Math.max(0, zenscroll.getTopOf(targetElem) - edgeOffset)
+							var diff = zenscroll.getY() - targetY
+							// Only do the adjustment if the browser is very close to the element:
+							if (0 <= diff && diff < 9 ) {
+								window.scrollTo(0, targetY)
+							}
+						}
+					}
+				}, 9)
+			}
+
+		}, false)
+
+		// Handling clicks on anchors
+		var RE_noZensmooth = new RegExp("(^|\\s)noZensmooth(\\s|$)")
+		window.addEventListener("click", function (event) {
+			var anchor = event.target
+			while (anchor && anchor.tagName !== "A") {
+				anchor = anchor.parentNode
+			}
+			// Let the browser handle the click if it wasn't with the primary button, or with some modifier keys:
+			if (!anchor || event.which !== 1 || event.shiftKey || event.metaKey || event.ctrlKey || event.altKey) {
+				return
+			}
+			// Save the current scrolling position so it can be used for scroll restoration:
+			if (isScrollRestorationSupported) {
+				var historyState = history.state && typeof history.state === "object" ? history.state : {}
+				historyState.zenscrollY = zenscroll.getY()
+				try {
+					history.replaceState(historyState, "")
+				} catch (e) {
+					// Avoid the Chrome Security exception on file protocol, e.g., file://index.html
+				}
+			}
+			// Find the referenced ID:
+			var href = anchor.getAttribute("href") || ""
+			if (href.indexOf("#") === 0 && !RE_noZensmooth.test(anchor.className)) {
+				var targetY = 0
+				var targetElem = document.getElementById(href.substring(1))
+				if (href !== "#") {
+					if (!targetElem) {
+						// Let the browser handle the click if the target ID is not found.
+						return
+					}
+					targetY = zenscroll.getTopOf(targetElem)
+				}
+				event.preventDefault()
+				// By default trigger the browser's `hashchange` event...
+				var onDone = function () { window.location = href }
+				// ...unless there is an edge offset specified
+				var edgeOffset = zenscroll.setup().edgeOffset
+				if (edgeOffset) {
+					targetY = Math.max(0, targetY - edgeOffset)
+					if (isHistorySupported) {
+						onDone = function () { history.pushState({}, "", href) }
+					}
+				}
+				zenscroll.toY(targetY, null, onDone)
+			}
+		}, false)
+
+	}
+
+
+	return zenscroll
+
+
+}));
+
+
+/***/ }),
+
 /***/ "./pages/components/footer.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7124,6 +7491,8 @@ var _default = HeadComponent;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_zenscroll__ = __webpack_require__("./node_modules/zenscroll/zenscroll.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_zenscroll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_zenscroll__);
 var _jsxFileName = "/home/qlapa/wedding/pages/components/header.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -7141,7 +7510,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
-// import SmoothScroll from "smooth-scroll";
+
 
 var HeadComponent = function (_PureComponent) {
     _inherits(HeadComponent, _PureComponent);
@@ -7149,31 +7518,47 @@ var HeadComponent = function (_PureComponent) {
     function HeadComponent(props) {
         _classCallCheck(this, HeadComponent);
 
-        return _possibleConstructorReturn(this, (HeadComponent.__proto__ || Object.getPrototypeOf(HeadComponent)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (HeadComponent.__proto__ || Object.getPrototypeOf(HeadComponent)).call(this, props));
+
+        _this.handleScroll = _this.handleScroll.bind(_this);
+        return _this;
     }
 
     _createClass(HeadComponent, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            __WEBPACK_IMPORTED_MODULE_1_zenscroll___default.a.setup(500, 100);
+        }
+    }, {
+        key: "handleScroll",
+        value: function handleScroll(to) {
+            var toElement = document.getElementById(to);
+            __WEBPACK_IMPORTED_MODULE_1_zenscroll___default.a.to(toElement);
+        }
+    }, {
         key: "render",
         value: function render() {
+            var _this2 = this;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
                 { id: "header", __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 11
+                        lineNumber: 22
                     }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
                     { className: "container", __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 12
+                            lineNumber: 23
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "span",
                         { className: "web-title", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 13
+                                lineNumber: 24
                             }
                         },
                         "R & I"
@@ -7182,14 +7567,16 @@ var HeadComponent = function (_PureComponent) {
                         "div",
                         { className: "visible-xs visible-sm pull-right", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 14
+                                lineNumber: 25
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "btn",
-                            { className: "btn btn-primary btn-header", __source: {
+                            "button",
+                            { onClick: function onClick() {
+                                    return _this2.handleScroll("messages");
+                                }, className: "btn btn-primary btn-header", __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 15
+                                    lineNumber: 26
                                 }
                             },
                             "Leave messages"
@@ -7199,69 +7586,49 @@ var HeadComponent = function (_PureComponent) {
                         "div",
                         { className: "visible-md visible-lg pull-right header-menu", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 17
+                                lineNumber: 28
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "span",
-                            {
-                                __source: {
+                            { onClick: function onClick() {
+                                    return _this2.handleScroll("home");
+                                }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 18
+                                    lineNumber: 29
                                 }
                             },
                             "Home"
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "span",
-                            {
-                                __source: {
+                            { onClick: function onClick() {
+                                    return _this2.handleScroll("wedding");
+                                }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 19
+                                    lineNumber: 30
                                 }
                             },
-                            "Get Invitation ",
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/static/download.png", width: "16", __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 19
-                                }
-                            })
+                            "The Wedding"
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "span",
-                            {
-                                __source: {
+                            { onClick: function onClick() {
+                                    return _this2.handleScroll("bride-groom");
+                                }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 20
-                                }
-                            },
-                            "Where"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "span",
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 21
-                                }
-                            },
-                            "When"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "span",
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 22
+                                    lineNumber: 31
                                 }
                             },
                             "Bride & Groom"
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "btn",
-                            { className: "btn btn-primary btn-header", __source: {
+                            "button",
+                            { onClick: function onClick() {
+                                    return _this2.handleScroll("messages");
+                                }, className: "btn btn-primary btn-header", __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 23
+                                    lineNumber: 32
                                 }
                             },
                             "Leave messages"
@@ -7272,67 +7639,45 @@ var HeadComponent = function (_PureComponent) {
                     "div",
                     { className: "container visible-xs visible-sm header-menu-mobile header-menu-mobile-outer", __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 26
+                            lineNumber: 35
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "div",
                         { className: "header-menu-mobile-inner", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 27
+                                lineNumber: 36
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "span",
-                            {
-                                __source: {
+                            { onClick: function onClick() {
+                                    return _this2.handleScroll("home");
+                                }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 28
+                                    lineNumber: 37
                                 }
                             },
                             "Home"
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "span",
-                            {
-                                __source: {
+                            { onClick: function onClick() {
+                                    return _this2.handleScroll("wedding");
+                                }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 29
+                                    lineNumber: 38
                                 }
                             },
-                            "Get Invitation ",
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/static/download.png", width: "16", __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 29
-                                }
-                            })
+                            "The Wedding"
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "span",
-                            {
-                                __source: {
+                            { onClick: function onClick() {
+                                    return _this2.handleScroll("bride-groom");
+                                }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 30
-                                }
-                            },
-                            "Where"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "span",
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 31
-                                }
-                            },
-                            "When"
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "span",
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 32
+                                    lineNumber: 39
                                 }
                             },
                             "Bride & Groom"
@@ -7432,7 +7777,7 @@ var Section1Component = function (_PureComponent) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: "section section-1", __source: {
+                { id: "home", className: "section section-1", __source: {
                         fileName: _jsxFileName,
                         lineNumber: 6
                     }
@@ -7465,11 +7810,19 @@ var Section1Component = function (_PureComponent) {
                                         lineNumber: 10
                                     }
                                 },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "col-xs-12 col-md-6 col-sm-6", __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 11
-                                    }
-                                }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    { className: "col-xs-12 col-md-6 col-sm-6 hidden-xs", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 11
+                                        }
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/static/hand.jpeg", className: "img-responsive image-section-1", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 12
+                                        }
+                                    })
+                                ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     "div",
                                     { className: "col-xs-12 col-md-6 col-sm-6 download-btn", style: { marginTop: "18px" }, __source: {
@@ -7519,6 +7872,19 @@ var Section1Component = function (_PureComponent) {
                                             }
                                         })
                                     )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    { className: "col-xs-8 col-xs-offset-2 visible-xs", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 21
+                                        }
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/static/hand.jpeg", className: "img-responsive image-section-1", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 22
+                                        }
+                                    })
                                 )
                             )
                         )
@@ -7617,7 +7983,7 @@ var Section2Component = function (_PureComponent) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: "section section-2", __source: {
+                { id: "quote", className: "section section-2", __source: {
                         fileName: _jsxFileName,
                         lineNumber: 6
                     }
@@ -7769,7 +8135,7 @@ var Section3Component = function (_PureComponent) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: "section section-3", __source: {
+                { id: "wedding", className: "section section-3", __source: {
                         fileName: _jsxFileName,
                         lineNumber: 6
                     }
@@ -8131,7 +8497,7 @@ var Section4Component = function (_PureComponent) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: "section section-4", __source: {
+                { id: "bride-groom", className: "section section-4", __source: {
                         fileName: _jsxFileName,
                         lineNumber: 6
                     }
@@ -8213,7 +8579,7 @@ var Section4Component = function (_PureComponent) {
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "p",
-                                            { "class": "see-profile", __source: {
+                                            { className: "see-profile", __source: {
                                                     fileName: _jsxFileName,
                                                     lineNumber: 17
                                                 }
@@ -8279,7 +8645,7 @@ var Section4Component = function (_PureComponent) {
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "p",
-                                            { "class": "see-profile", __source: {
+                                            { className: "see-profile", __source: {
                                                     fileName: _jsxFileName,
                                                     lineNumber: 26
                                                 }
@@ -8361,6 +8727,7 @@ var _default = Section4Component;
 "use strict";
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__functions_fetchers__ = __webpack_require__("./pages/functions/fetchers.js");
 var _jsxFileName = "/home/qlapa/wedding/pages/components/section-5.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -8381,6 +8748,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 function toTitleCase(str) {
     if (str === null || str === undefined) return str;
     str = str.trim();
@@ -8398,7 +8766,7 @@ var Section5Component = function (_PureComponent) {
         var _this = _possibleConstructorReturn(this, (Section5Component.__proto__ || Object.getPrototypeOf(Section5Component)).call(this, props));
 
         _this.state = {
-            sender: "",
+            name: "",
             messages: "",
             email: "",
             isAttending: null,
@@ -8420,10 +8788,12 @@ var Section5Component = function (_PureComponent) {
     }, {
         key: "handleSubmit",
         value: function handleSubmit(event) {
+            var _this2 = this;
+
             event.preventDefault();
 
             var _state = this.state,
-                sender = _state.sender,
+                name = _state.name,
                 email = _state.email,
                 messages = _state.messages,
                 isAttending = _state.isAttending;
@@ -8431,101 +8801,116 @@ var Section5Component = function (_PureComponent) {
 
             this.setState({
                 isLoading: true,
-                isSubmitting: true
+                isSubmitting: true,
+                isSuccess: false
             });
 
-            console.log(sender, email, messages, isAttending);
+            var params = {
+                name: name,
+                email: email,
+                messages: messages,
+                isAttending: isAttending
+            };
+
+            Object(__WEBPACK_IMPORTED_MODULE_1__functions_fetchers__["a" /* fetchPost */])("http://localhost/api/index.php", params, "json").then(function (response) {
+                if (response.status === "SUCCESS") {
+                    _this2.setState({
+                        isLoading: false,
+                        isSubmitting: false,
+                        isSuccess: true
+                    });
+                }
+            });
         }
     }, {
         key: "render",
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             var _state2 = this.state,
-                sender = _state2.sender,
+                name = _state2.name,
                 email = _state2.email,
                 messages = _state2.messages,
                 isAttending = _state2.isAttending,
                 isLoading = _state2.isLoading,
-                isSubmitting = _state2.isSubmitting;
+                isSubmitting = _state2.isSubmitting,
+                isSuccess = _state2.isSuccess;
 
-
-            console.log(sender, email, messages, isAttending);
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: "section section-5", __source: {
+                { id: "messages", className: "section section-5", __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 66
+                        lineNumber: 84
                     }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
                     { className: "container", __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 67
+                            lineNumber: 85
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "div",
                         { className: "row", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 68
+                                lineNumber: 86
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "div",
                             { className: "col-md-6 col-md-offset-3 col-xs-12 col-sm-8 col-sm-offset-2", __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 69
+                                    lineNumber: 87
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 "div",
                                 { className: "row", __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 70
+                                        lineNumber: 88
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     "div",
                                     { className: "col-xs-12", __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 71
+                                            lineNumber: 89
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         "h4",
                                         { className: "stories-title", __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 72
+                                                lineNumber: 90
                                             }
                                         },
                                         "LEAVE US MESSAGES"
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "stories-after", __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 75
+                                            lineNumber: 93
                                         }
                                     }),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 76
+                                            lineNumber: 94
                                         }
                                     }),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         "form",
                                         { onSubmit: this.handleSubmit, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 78
+                                                lineNumber: 96
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "h4",
                                             { className: "input-title", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 79
+                                                    lineNumber: 97
                                                 }
                                             },
                                             "Name"
@@ -8534,43 +8919,43 @@ var Section5Component = function (_PureComponent) {
                                             "div",
                                             { className: "row", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 80
+                                                    lineNumber: 98
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "div",
                                                 { className: "col-xs-12", __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 81
+                                                        lineNumber: 99
                                                     }
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-                                                    value: sender,
+                                                    value: name,
                                                     type: "text",
                                                     className: "form-control",
                                                     placeholder: "Name ",
                                                     onChange: function onChange(event) {
-                                                        return _this2.handleChangeState("sender", event.target.value);
+                                                        return _this3.handleChangeState("name", event.target.value);
                                                     },
                                                     required: true,
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 82
+                                                        lineNumber: 100
                                                     }
                                                 }),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "div",
                                                     { className: "input-tips", __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 90
+                                                            lineNumber: 108
                                                         }
                                                     },
-                                                    sender && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    name && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                         "p",
                                                         {
                                                             __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 92
+                                                                lineNumber: 110
                                                             }
                                                         },
                                                         "Hi, ",
@@ -8579,10 +8964,10 @@ var Section5Component = function (_PureComponent) {
                                                             {
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 92
+                                                                    lineNumber: 110
                                                                 }
                                                             },
-                                                            toTitleCase(sender)
+                                                            toTitleCase(name)
                                                         ),
                                                         ". Thanks for leaving us messages."
                                                     )
@@ -8593,7 +8978,7 @@ var Section5Component = function (_PureComponent) {
                                             "h4",
                                             { className: "input-title", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 98
+                                                    lineNumber: 116
                                                 }
                                             },
                                             "Attending ?"
@@ -8602,28 +8987,28 @@ var Section5Component = function (_PureComponent) {
                                             "div",
                                             { className: "row", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 99
+                                                    lineNumber: 117
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "div",
                                                 { className: "col-xs-12", __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 100
+                                                        lineNumber: 118
                                                     }
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "div",
                                                     { className: "row", __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 101
+                                                            lineNumber: 119
                                                         }
                                                     },
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                         "div",
                                                         { className: "col-xs-6", style: { paddingRight: "7px" }, __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 102
+                                                                lineNumber: 120
                                                             }
                                                         },
                                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -8631,11 +9016,11 @@ var Section5Component = function (_PureComponent) {
                                                             {
                                                                 className: "attending-option text-center" + (isAttending === true ? " active" : ""),
                                                                 onClick: function onClick() {
-                                                                    return _this2.handleChangeState("isAttending", true);
+                                                                    return _this3.handleChangeState("isAttending", true);
                                                                 },
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 103
+                                                                    lineNumber: 121
                                                                 }
                                                             },
                                                             "YES"
@@ -8645,7 +9030,7 @@ var Section5Component = function (_PureComponent) {
                                                         "div",
                                                         { className: "col-xs-6", style: { paddingLeft: "7px" }, __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 110
+                                                                lineNumber: 128
                                                             }
                                                         },
                                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -8653,11 +9038,11 @@ var Section5Component = function (_PureComponent) {
                                                             {
                                                                 className: "attending-option text-center" + (isAttending === false ? " active" : ""),
                                                                 onClick: function onClick() {
-                                                                    return _this2.handleChangeState("isAttending", false);
+                                                                    return _this3.handleChangeState("isAttending", false);
                                                                 },
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 111
+                                                                    lineNumber: 129
                                                                 }
                                                             },
                                                             "NO"
@@ -8666,16 +9051,17 @@ var Section5Component = function (_PureComponent) {
                                                 ),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "div",
-                                                    { style: { paddingTop: "10px" }, __source: {
+                                                    {
+                                                        __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 119
+                                                            lineNumber: 137
                                                         }
                                                     },
                                                     isAttending != null && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                         "div",
                                                         { className: "input-tips", __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 121
+                                                                lineNumber: 139
                                                             }
                                                         },
                                                         isAttending ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -8683,7 +9069,7 @@ var Section5Component = function (_PureComponent) {
                                                             {
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 123
+                                                                    lineNumber: 141
                                                                 }
                                                             },
                                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -8691,7 +9077,7 @@ var Section5Component = function (_PureComponent) {
                                                                 {
                                                                     __source: {
                                                                         fileName: _jsxFileName,
-                                                                        lineNumber: 123
+                                                                        lineNumber: 141
                                                                     }
                                                                 },
                                                                 "Great!"
@@ -8702,7 +9088,7 @@ var Section5Component = function (_PureComponent) {
                                                             {
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 124
+                                                                    lineNumber: 142
                                                                 }
                                                             },
                                                             "Hopefully we can meet you there."
@@ -8714,14 +9100,14 @@ var Section5Component = function (_PureComponent) {
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 131
+                                                lineNumber: 149
                                             }
                                         }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "h4",
                                             { className: "input-title", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 133
+                                                    lineNumber: 151
                                                 }
                                             },
                                             "Email"
@@ -8730,14 +9116,14 @@ var Section5Component = function (_PureComponent) {
                                             "div",
                                             { className: "row", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 134
+                                                    lineNumber: 152
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "div",
                                                 { className: "col-xs-12", __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 135
+                                                        lineNumber: 153
                                                     }
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
@@ -8746,25 +9132,25 @@ var Section5Component = function (_PureComponent) {
                                                     className: "form-control",
                                                     placeholder: "Name ",
                                                     onChange: function onChange(event) {
-                                                        return _this2.handleChangeState("email", event.target.value);
+                                                        return _this3.handleChangeState("email", event.target.value);
                                                     },
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 136
+                                                        lineNumber: 154
                                                     }
                                                 }),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "div",
                                                     { className: "input-tips", __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 143
+                                                            lineNumber: 161
                                                         }
                                                     },
                                                     email && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                         "div",
                                                         { className: "input-tips", __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 145
+                                                                lineNumber: 163
                                                             }
                                                         },
                                                         "We'll send your photo to ",
@@ -8773,7 +9159,7 @@ var Section5Component = function (_PureComponent) {
                                                             {
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 146
+                                                                    lineNumber: 164
                                                                 }
                                                             },
                                                             email
@@ -8786,7 +9172,7 @@ var Section5Component = function (_PureComponent) {
                                             "h4",
                                             { className: "input-title", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 154
+                                                    lineNumber: 172
                                                 }
                                             },
                                             "Messages"
@@ -8795,14 +9181,14 @@ var Section5Component = function (_PureComponent) {
                                             "div",
                                             { className: "row", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 155
+                                                    lineNumber: 173
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "div",
                                                 { className: "col-xs-12", __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 156
+                                                        lineNumber: 174
                                                     }
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", {
@@ -8811,19 +9197,19 @@ var Section5Component = function (_PureComponent) {
                                                     placeholder: "Messages",
                                                     rows: "5",
                                                     onChange: function onChange(event) {
-                                                        return _this2.handleChangeState("messages", event.target.value);
+                                                        return _this3.handleChangeState("messages", event.target.value);
                                                     },
                                                     required: true,
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 157
+                                                        lineNumber: 175
                                                     }
                                                 }),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "div",
                                                     { className: "input-tips", __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 165
+                                                            lineNumber: 183
                                                         }
                                                     },
                                                     messages != "" && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -8831,7 +9217,7 @@ var Section5Component = function (_PureComponent) {
                                                         {
                                                             __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 167
+                                                                lineNumber: 185
                                                             }
                                                         },
                                                         messages.length < 50 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -8839,7 +9225,7 @@ var Section5Component = function (_PureComponent) {
                                                             {
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 169
+                                                                    lineNumber: 187
                                                                 }
                                                             },
                                                             "Thanks for the message. But r u sure not to send us a longer one ?"
@@ -8848,7 +9234,7 @@ var Section5Component = function (_PureComponent) {
                                                             {
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 170
+                                                                    lineNumber: 188
                                                                 }
                                                             },
                                                             "Thanks for the message, ",
@@ -8857,10 +9243,10 @@ var Section5Component = function (_PureComponent) {
                                                                 {
                                                                     __source: {
                                                                         fileName: _jsxFileName,
-                                                                        lineNumber: 170
+                                                                        lineNumber: 188
                                                                     }
                                                                 },
-                                                                sender
+                                                                toTitleCase(name)
                                                             )
                                                         )
                                                     )
@@ -8869,23 +9255,23 @@ var Section5Component = function (_PureComponent) {
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "div",
-                                            { className: "row", __source: {
+                                            { className: "row", style: { marginTop: "15px" }, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 178
+                                                    lineNumber: 196
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "div",
                                                 { className: "col-xs-12", __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 179
+                                                        lineNumber: 197
                                                     }
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "button",
-                                                    { id: "btn-submit", type: "submit", className: "btn btn-lg btn-primary btn-block", disabled: isLoading, __source: {
+                                                    { id: "btn-submit", type: "submit", className: "btn btn-lg btn-primary btn-block", disabled: isSubmitting, __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 180
+                                                            lineNumber: 198
                                                         }
                                                     },
                                                     isLoading ? "SENDING....." : "SEND"
@@ -8894,7 +9280,7 @@ var Section5Component = function (_PureComponent) {
                                                     "div",
                                                     { className: "input-tips", __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 186
+                                                            lineNumber: 204
                                                         }
                                                     },
                                                     isSubmitting && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -8902,7 +9288,7 @@ var Section5Component = function (_PureComponent) {
                                                         {
                                                             __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 188
+                                                                lineNumber: 206
                                                             }
                                                         },
                                                         isLoading ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -8910,7 +9296,7 @@ var Section5Component = function (_PureComponent) {
                                                             {
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 190
+                                                                    lineNumber: 208
                                                                 }
                                                             },
                                                             "Saving your messages..."
@@ -8919,10 +9305,28 @@ var Section5Component = function (_PureComponent) {
                                                             {
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 191
+                                                                    lineNumber: 209
                                                                 }
                                                             },
                                                             "Saved. Thanks."
+                                                        )
+                                                    ),
+                                                    isSuccess && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "h3",
+                                                        { className: "text-center success-messages", __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 215
+                                                            }
+                                                        },
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "b",
+                                                            {
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 216
+                                                                }
+                                                            },
+                                                            "Thanks for your messages"
                                                         )
                                                     )
                                                 )
@@ -8985,6 +9389,143 @@ var _default = Section5Component;
         }
       }
     })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/components/section-5")
+  
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./pages/functions/fetchers.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {/* unused harmony export ERROR_NO_CONNECTION */
+/* unused harmony export RESPONSE_SUCCESS */
+/* unused harmony export RESPONSE_ERROR */
+/* unused harmony export RESPONSE_ERROR_CONNECTION */
+/* unused harmony export fetchGet */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return fetchPost; });
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+(function () {
+    var enterModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").enterModule;
+
+    enterModule && enterModule(module);
+})();
+
+var ERROR_NO_CONNECTION = ["Gagal terhubung ke server. Cek koneksimu dan refresh halaman ini."];
+var RESPONSE_SUCCESS = "SUCCESS";
+var RESPONSE_ERROR = "ERROR";
+var RESPONSE_ERROR_CONNECTION = { status: RESPONSE_ERROR, errors: ERROR_NO_CONNECTION };
+
+var stringifyPrimitive = function stringifyPrimitive(v) {
+    switch (typeof v === "undefined" ? "undefined" : _typeof(v)) {
+        case "string":
+            return v;
+        case "boolean":
+            return v ? "true" : "false";
+        case "number":
+            return isFinite(v) ? v : "";
+        default:
+            return "";
+    }
+};
+
+var stringify = function stringify(obj, sep, eq, name) {
+    sep = sep || "&";
+    eq = eq || "=";
+    if (obj === null) {
+        obj = undefined;
+    }
+
+    if ((typeof obj === "undefined" ? "undefined" : _typeof(obj)) === "object") {
+        return Object.keys(obj).map(function (k) {
+            var ks = encodeURIComponent(stringifyPrimitive(k)) + eq;
+            if (Array.isArray(obj[k])) {
+                return obj[k].map(function (v) {
+                    return ks + encodeURIComponent(stringifyPrimitive(v));
+                }).join(sep);
+            } else {
+                return ks + encodeURIComponent(stringifyPrimitive(obj[k]));
+            }
+        }).join(sep);
+    }
+
+    return !name ? "" : encodeURIComponent(stringifyPrimitive(name)) + eq + encodeURIComponent(stringifyPrimitive(obj));
+};
+
+var fetchGet = function fetchGet(urlPath) {
+    return fetch(urlPath, { credentials: "include" }).then(function (response) {
+        return response.ok ? response.json() : Promise.reject(new Error("error"));
+    }).catch(function (error) {
+        return Promise.reject(new Error(error));
+    });
+};
+
+var fetchPost = function fetchPost(urlPath, params, contentType) {
+    var emptyResponse = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+
+    var requestBody = stringify(params);
+    var requestHeaders = { "Content-Type": "application/x-www-form-urlencoded" };
+
+    if (contentType === "json") {
+        requestBody = JSON.stringify(params);
+        requestHeaders = { "Content-Type": "application/json" };
+    }
+
+    return fetch(urlPath, {
+        credentials: "include",
+        headers: requestHeaders,
+        body: requestBody,
+        method: "POST"
+    }).then(function (response) {
+        if (emptyResponse) {
+            return response.ok ? response : Promise.reject(new Error("error"));
+        }
+        return response.ok ? response.json() : Promise.reject(new Error("error"));
+    }).catch(function (error) {
+        return Promise.reject(new Error(error));
+    });
+};
+;
+
+(function () {
+    var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/patch.js").default;
+
+    var leaveModule = __webpack_require__("./node_modules/react-hot-loader/patch.js").leaveModule;
+
+    if (!reactHotLoader) {
+        return;
+    }
+
+    reactHotLoader.register(ERROR_NO_CONNECTION, "ERROR_NO_CONNECTION", "/home/qlapa/wedding/pages/functions/fetchers.js");
+    reactHotLoader.register(RESPONSE_SUCCESS, "RESPONSE_SUCCESS", "/home/qlapa/wedding/pages/functions/fetchers.js");
+    reactHotLoader.register(RESPONSE_ERROR, "RESPONSE_ERROR", "/home/qlapa/wedding/pages/functions/fetchers.js");
+    reactHotLoader.register(RESPONSE_ERROR_CONNECTION, "RESPONSE_ERROR_CONNECTION", "/home/qlapa/wedding/pages/functions/fetchers.js");
+    reactHotLoader.register(stringifyPrimitive, "stringifyPrimitive", "/home/qlapa/wedding/pages/functions/fetchers.js");
+    reactHotLoader.register(stringify, "stringify", "/home/qlapa/wedding/pages/functions/fetchers.js");
+    reactHotLoader.register(fetchGet, "fetchGet", "/home/qlapa/wedding/pages/functions/fetchers.js");
+    reactHotLoader.register(fetchPost, "fetchPost", "/home/qlapa/wedding/pages/functions/fetchers.js");
+    leaveModule(module);
+})();
+
+;
+    (function (Component, route) {
+      if(!Component) return
+      if (false) return
+      module.hot.accept()
+      Component.__route = route
+
+      if (module.hot.status() === 'idle') return
+
+      var components = next.router.components
+      for (var r in components) {
+        if (!components.hasOwnProperty(r)) continue
+
+        if (components[r].Component.__route === route) {
+          next.router.update(r, Component)
+        }
+      }
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/functions/fetchers")
   
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
