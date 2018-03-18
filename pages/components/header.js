@@ -1,6 +1,11 @@
 import React, {PureComponent} from "react";
+// import SmoothScroll from "smooth-scroll";
 
 class HeadComponent extends PureComponent {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return(
             <div id="header">

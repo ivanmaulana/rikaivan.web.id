@@ -7141,14 +7141,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
+// import SmoothScroll from "smooth-scroll";
 
 var HeadComponent = function (_PureComponent) {
     _inherits(HeadComponent, _PureComponent);
 
-    function HeadComponent() {
+    function HeadComponent(props) {
         _classCallCheck(this, HeadComponent);
 
-        return _possibleConstructorReturn(this, (HeadComponent.__proto__ || Object.getPrototypeOf(HeadComponent)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (HeadComponent.__proto__ || Object.getPrototypeOf(HeadComponent)).call(this, props));
     }
 
     _createClass(HeadComponent, [{
@@ -7158,21 +7159,21 @@ var HeadComponent = function (_PureComponent) {
                 "div",
                 { id: "header", __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 6
+                        lineNumber: 11
                     }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
                     { className: "container", __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 7
+                            lineNumber: 12
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "span",
                         { className: "web-title", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 8
+                                lineNumber: 13
                             }
                         },
                         "R & I"
@@ -7181,14 +7182,14 @@ var HeadComponent = function (_PureComponent) {
                         "div",
                         { className: "visible-xs visible-sm pull-right", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 9
+                                lineNumber: 14
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "btn",
                             { className: "btn btn-primary btn-header", __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 10
+                                    lineNumber: 15
                                 }
                             },
                             "Leave messages"
@@ -7198,7 +7199,7 @@ var HeadComponent = function (_PureComponent) {
                         "div",
                         { className: "visible-md visible-lg pull-right header-menu", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 12
+                                lineNumber: 17
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -7206,7 +7207,7 @@ var HeadComponent = function (_PureComponent) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 13
+                                    lineNumber: 18
                                 }
                             },
                             "Home"
@@ -7216,13 +7217,13 @@ var HeadComponent = function (_PureComponent) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 14
+                                    lineNumber: 19
                                 }
                             },
                             "Get Invitation ",
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/static/download.png", width: "16", __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 14
+                                    lineNumber: 19
                                 }
                             })
                         ),
@@ -7231,7 +7232,7 @@ var HeadComponent = function (_PureComponent) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 15
+                                    lineNumber: 20
                                 }
                             },
                             "Where"
@@ -7241,7 +7242,7 @@ var HeadComponent = function (_PureComponent) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 16
+                                    lineNumber: 21
                                 }
                             },
                             "When"
@@ -7251,7 +7252,7 @@ var HeadComponent = function (_PureComponent) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 17
+                                    lineNumber: 22
                                 }
                             },
                             "Bride & Groom"
@@ -7260,7 +7261,7 @@ var HeadComponent = function (_PureComponent) {
                             "btn",
                             { className: "btn btn-primary btn-header", __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 18
+                                    lineNumber: 23
                                 }
                             },
                             "Leave messages"
@@ -7271,14 +7272,14 @@ var HeadComponent = function (_PureComponent) {
                     "div",
                     { className: "container visible-xs visible-sm header-menu-mobile header-menu-mobile-outer", __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 21
+                            lineNumber: 26
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         "div",
                         { className: "header-menu-mobile-inner", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 22
+                                lineNumber: 27
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -7286,7 +7287,7 @@ var HeadComponent = function (_PureComponent) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 23
+                                    lineNumber: 28
                                 }
                             },
                             "Home"
@@ -7296,13 +7297,13 @@ var HeadComponent = function (_PureComponent) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 24
+                                    lineNumber: 29
                                 }
                             },
                             "Get Invitation ",
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "/static/download.png", width: "16", __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 24
+                                    lineNumber: 29
                                 }
                             })
                         ),
@@ -7311,7 +7312,7 @@ var HeadComponent = function (_PureComponent) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 25
+                                    lineNumber: 30
                                 }
                             },
                             "Where"
@@ -7321,7 +7322,7 @@ var HeadComponent = function (_PureComponent) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 26
+                                    lineNumber: 31
                                 }
                             },
                             "When"
@@ -7331,7 +7332,7 @@ var HeadComponent = function (_PureComponent) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 27
+                                    lineNumber: 32
                                 }
                             },
                             "Bride & Groom"
@@ -7458,63 +7459,51 @@ var Section1Component = function (_PureComponent) {
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "h1",
-                                {
-                                    __source: {
+                                "div",
+                                { className: "row", __source: {
                                         fileName: _jsxFileName,
                                         lineNumber: 10
                                     }
                                 },
-                                "We're Getting Married."
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                "div",
-                                { className: "row", __source: {
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "col-xs-12 col-md-6 col-sm-6", __source: {
                                         fileName: _jsxFileName,
                                         lineNumber: 11
                                     }
-                                },
+                                }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     "div",
-                                    { className: "col-xs-12 col-md-6 col-sm-6", __source: {
+                                    { className: "col-xs-12 col-md-6 col-sm-6 download-btn", style: { marginTop: "18px" }, __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 12
+                                            lineNumber: 14
                                         }
                                     },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "h1",
+                                        {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 15
+                                            }
+                                        },
+                                        "We're Getting Married."
+                                    ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         "p",
                                         {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 13
+                                                lineNumber: 16
                                             }
                                         },
                                         "Together with our parents. ",
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 13
+                                                lineNumber: 16
                                             }
                                         }),
                                         " We, invite you to share in the joy of beginning our new life together."
                                     ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "p",
-                                        { className: "section-1-title", __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 14
-                                            }
-                                        },
-                                        "- Rika Rosdiana & Ivan Maulana."
-                                    )
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "div",
-                                    { className: "col-xs-12 col-md-6 col-sm-6 text-center download-btn", style: { marginTop: "18px" }, __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 16
-                                        }
-                                    },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         "span",
                                         {
@@ -7649,7 +7638,7 @@ var Section2Component = function (_PureComponent) {
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "div",
-                            { className: "col-md-10 col-md-offset-1 col-xs-12 col-sm-10 col-sm-offset-1", __source: {
+                            { className: "col-md-8 col-md-offset-2 col-xs-12 col-sm-8 col-sm-offset-2", __source: {
                                     fileName: _jsxFileName,
                                     lineNumber: 9
                                 }
@@ -7780,111 +7769,211 @@ var Section3Component = function (_PureComponent) {
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "div",
-                { className: "section-3", __source: {
+                { className: "section section-3", __source: {
                         fileName: _jsxFileName,
                         lineNumber: 6
                     }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     "div",
-                    { className: "col-xs-12 col-sm-6 wedding-map", __source: {
+                    { className: "row section-3-container", __source: {
                             fileName: _jsxFileName,
                             lineNumber: 7
                         }
                     },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("iframe", { src: "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1983.196957444171!2d106.7921418!3d-6.2116656!3m2!1i1024!2i768!4f13.1!3m2!1m1!2sMusholla+As+Salaam!5e0!3m2!1sen!2sid!4v1519505752015", frameBorder: "0", style: { border: 0 }, allowFullScreen: true, __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 8
-                        }
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "col-xs-12 col-sm-6 wedding-info", __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 10
-                        }
-                    },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "h3",
-                        { className: "title", __source: {
+                        "div",
+                        { className: "col-xs-12", __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 11
+                                lineNumber: 8
                             }
                         },
-                        "The Wedding"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "p",
-                        { className: "wedding-title", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 12
-                            }
-                        },
-                        "Location:"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "p",
-                        { className: "wedding-detail", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 13
-                            }
-                        },
-                        "Aula Musholla As Salam"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "p",
-                        { className: "wedding-title", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 14
-                            }
-                        },
-                        "Address:"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "p",
-                        { className: "wedding-detail", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 15
-                            }
-                        },
-                        "Jl. Kemandoran Pluis No.24, Kebayoran Lama, Jakarta Selatan"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "p",
-                        { className: "wedding-title", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 16
-                            }
-                        },
-                        "Date:"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "p",
-                        { className: "wedding-detail", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 17
-                            }
-                        },
-                        "Sunday, April 1, 2018"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "p",
-                        { className: "wedding-title", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 18
-                            }
-                        },
-                        "Time:"
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "p",
-                        { className: "wedding-detail", __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 19
-                            }
-                        },
-                        "8 AM - 9 PM"
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { className: "col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1", __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 9
+                                }
+                            },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "div",
+                                { className: "text-center", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 10
+                                    }
+                                },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "h2",
+                                    { className: "title", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 11
+                                        }
+                                    },
+                                    "The Wedding"
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("iframe", { src: "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1983.196957444171!2d106.7921418!3d-6.2116656!3m2!1i1024!2i768!4f13.1!3m2!1m1!2sMusholla+As+Salaam!5e0!3m2!1sen!2sid!4v1519505752015", frameBorder: "0", style: { border: 0 }, allowFullScreen: true, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 13
+                                }
+                            })
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { className: "col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 wedding-info", __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 15
+                                }
+                            },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "div",
+                                { className: "row", __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 16
+                                    }
+                                },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    { className: "col-xs-12 col-sm-6", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 17
+                                        }
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "div",
+                                        { className: "row mobile-padding", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 18
+                                            }
+                                        },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "wedding-title", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 19
+                                                }
+                                            },
+                                            "Date:"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "wedding-detail", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 20
+                                                }
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "b",
+                                                {
+                                                    __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 20
+                                                    }
+                                                },
+                                                "Sunday, April 1, 2018"
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "wedding-title", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 21
+                                                }
+                                            },
+                                            "Time:"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "wedding-detail", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 22
+                                                }
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "b",
+                                                {
+                                                    __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 22
+                                                    }
+                                                },
+                                                "8 AM - 9 PM"
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    { className: "col-xs-12 col-sm-6", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 25
+                                        }
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "div",
+                                        { className: "row mobile-padding", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 26
+                                            }
+                                        },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "wedding-title", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 27
+                                                }
+                                            },
+                                            "Location:"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "wedding-detail", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 28
+                                                }
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "b",
+                                                {
+                                                    __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 28
+                                                    }
+                                                },
+                                                "Aula Musholla As Salam"
+                                            )
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "wedding-title", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 29
+                                                }
+                                            },
+                                            "Address:"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "wedding-detail", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 30
+                                                }
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "b",
+                                                {
+                                                    __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 30
+                                                    }
+                                                },
+                                                "Jl. Kemandoran Pluis No.24, Kebayoran Lama, Jakarta Selatan"
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
                     )
                 )
             );
@@ -8274,7 +8363,7 @@ var Section5Component = function (_PureComponent) {
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             "div",
-                            { className: "col-md-10 col-md-offset-1 col-xs-12 col-sm-12", __source: {
+                            { className: "col-md-6 col-md-offset-3 col-xs-12 col-sm-8 col-sm-offset-2", __source: {
                                     fileName: _jsxFileName,
                                     lineNumber: 69
                                 }
@@ -8321,28 +8410,10 @@ var Section5Component = function (_PureComponent) {
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            "div",
-                                            { className: "row", __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 79
-                                                }
-                                            },
-                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "col-sm-6 col-xs-12", __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 80
-                                                }
-                                            }),
-                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "col-sm-6 col-xs-12", __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 83
-                                                }
-                                            })
-                                        ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "h4",
                                             { className: "input-title", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 88
+                                                    lineNumber: 79
                                                 }
                                             },
                                             "Name"
@@ -8351,14 +8422,14 @@ var Section5Component = function (_PureComponent) {
                                             "div",
                                             { className: "row", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 89
+                                                    lineNumber: 80
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "div",
-                                                { className: "col-sm-6 col-xs-12", __source: {
+                                                { className: "col-xs-12", __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 90
+                                                        lineNumber: 81
                                                     }
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
@@ -8372,37 +8443,37 @@ var Section5Component = function (_PureComponent) {
                                                     required: true,
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 91
+                                                        lineNumber: 82
                                                     }
-                                                })
-                                            ),
-                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "div",
-                                                { className: "col-sm-6 col-xs-12 input-tips", __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 100
-                                                    }
-                                                },
-                                                sender && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                    "p",
-                                                    {
-                                                        __source: {
+                                                }),
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                    "div",
+                                                    { className: "input-tips", __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 102
+                                                            lineNumber: 90
                                                         }
                                                     },
-                                                    "Hi, ",
-                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        "b",
+                                                    sender && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "p",
                                                         {
                                                             __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 102
+                                                                lineNumber: 92
                                                             }
                                                         },
-                                                        toTitleCase(sender)
-                                                    ),
-                                                    ". Thanks for leaving us messages."
+                                                        "Hi, ",
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "b",
+                                                            {
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 92
+                                                                }
+                                                            },
+                                                            toTitleCase(sender)
+                                                        ),
+                                                        ". Thanks for leaving us messages."
+                                                    )
                                                 )
                                             )
                                         ),
@@ -8410,7 +8481,7 @@ var Section5Component = function (_PureComponent) {
                                             "h4",
                                             { className: "input-title", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 108
+                                                    lineNumber: 98
                                                 }
                                             },
                                             "Attending ?"
@@ -8419,28 +8490,28 @@ var Section5Component = function (_PureComponent) {
                                             "div",
                                             { className: "row", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 109
+                                                    lineNumber: 99
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "div",
-                                                { className: "col-sm-6 col-xs-12", __source: {
+                                                { className: "col-xs-12", __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 110
+                                                        lineNumber: 100
                                                     }
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "div",
                                                     { className: "row", __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 111
+                                                            lineNumber: 101
                                                         }
                                                     },
                                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                         "div",
                                                         { className: "col-xs-6", style: { paddingRight: "7px" }, __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 112
+                                                                lineNumber: 102
                                                             }
                                                         },
                                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -8452,7 +8523,7 @@ var Section5Component = function (_PureComponent) {
                                                                 },
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 113
+                                                                    lineNumber: 103
                                                                 }
                                                             },
                                                             "YES"
@@ -8462,7 +8533,7 @@ var Section5Component = function (_PureComponent) {
                                                         "div",
                                                         { className: "col-xs-6", style: { paddingLeft: "7px" }, __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 120
+                                                                lineNumber: 110
                                                             }
                                                         },
                                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -8474,56 +8545,56 @@ var Section5Component = function (_PureComponent) {
                                                                 },
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 121
+                                                                    lineNumber: 111
                                                                 }
                                                             },
                                                             "NO"
                                                         )
                                                     )
-                                                )
-                                            ),
-                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "div",
-                                                { id: "attending-messages", className: "col-sm-6 col-xs-12", __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 130
-                                                    }
-                                                },
-                                                isAttending != null && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "div",
                                                     { className: "input-tips", __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 132
+                                                            lineNumber: 119
                                                         }
                                                     },
-                                                    isAttending ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        "span",
-                                                        {
-                                                            __source: {
+                                                    isAttending != null && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "div",
+                                                        { className: "input-tips", __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 134
+                                                                lineNumber: 121
                                                             }
                                                         },
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                            "b",
+                                                        isAttending ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "span",
                                                             {
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 134
+                                                                    lineNumber: 123
                                                                 }
                                                             },
-                                                            "Great!"
-                                                        ),
-                                                        " See you there."
-                                                    ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        "span",
-                                                        {
-                                                            __source: {
-                                                                fileName: _jsxFileName,
-                                                                lineNumber: 135
-                                                            }
-                                                        },
-                                                        "Hopefully we can meet you there."
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                "b",
+                                                                {
+                                                                    __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 123
+                                                                    }
+                                                                },
+                                                                "Great!"
+                                                            ),
+                                                            " See you there."
+                                                        ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "span",
+                                                            {
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 124
+                                                                }
+                                                            },
+                                                            "Hopefully we can meet you there."
+                                                        )
                                                     )
                                                 )
                                             )
@@ -8531,14 +8602,14 @@ var Section5Component = function (_PureComponent) {
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 142
+                                                lineNumber: 131
                                             }
                                         }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "h4",
                                             { className: "input-title", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 144
+                                                    lineNumber: 133
                                                 }
                                             },
                                             "Email"
@@ -8547,14 +8618,14 @@ var Section5Component = function (_PureComponent) {
                                             "div",
                                             { className: "row", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 145
+                                                    lineNumber: 134
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "div",
-                                                { className: "col-sm-6 col-xs-12", __source: {
+                                                { className: "col-xs-12", __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 146
+                                                        lineNumber: 135
                                                     }
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
@@ -8567,34 +8638,34 @@ var Section5Component = function (_PureComponent) {
                                                     },
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 147
+                                                        lineNumber: 136
                                                     }
-                                                })
-                                            ),
-                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "div",
-                                                { className: "col-sm-6 col-xs-12", __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 155
-                                                    }
-                                                },
-                                                email && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                }),
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "div",
                                                     { className: "input-tips", __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 157
+                                                            lineNumber: 143
                                                         }
                                                     },
-                                                    "We'll send your photo to ",
-                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        "b",
-                                                        {
-                                                            __source: {
+                                                    email && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "div",
+                                                        { className: "input-tips", __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 158
+                                                                lineNumber: 145
                                                             }
                                                         },
-                                                        email
+                                                        "We'll send your photo to ",
+                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "b",
+                                                            {
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 146
+                                                                }
+                                                            },
+                                                            email
+                                                        )
                                                     )
                                                 )
                                             )
@@ -8603,7 +8674,7 @@ var Section5Component = function (_PureComponent) {
                                             "h4",
                                             { className: "input-title", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 165
+                                                    lineNumber: 154
                                                 }
                                             },
                                             "Messages"
@@ -8612,14 +8683,14 @@ var Section5Component = function (_PureComponent) {
                                             "div",
                                             { className: "row", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 166
+                                                    lineNumber: 155
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "div",
-                                                { className: "col-sm-6 col-xs-12", __source: {
+                                                { className: "col-xs-12", __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 167
+                                                        lineNumber: 156
                                                     }
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", {
@@ -8633,52 +8704,52 @@ var Section5Component = function (_PureComponent) {
                                                     required: true,
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 168
+                                                        lineNumber: 157
                                                     }
-                                                })
-                                            ),
-                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "div",
-                                                { className: "col-sm-6 col-xs-12 input-tips", __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 177
-                                                    }
-                                                },
-                                                messages != "" && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                }),
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "div",
-                                                    {
-                                                        __source: {
+                                                    { className: "input-tips", __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 179
+                                                            lineNumber: 165
                                                         }
                                                     },
-                                                    messages.length < 50 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        "span",
+                                                    messages != "" && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "div",
                                                         {
                                                             __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 181
+                                                                lineNumber: 167
                                                             }
                                                         },
-                                                        "Thanks for the message. But r u sure not to send us a longer one ?"
-                                                    ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        "span",
-                                                        {
-                                                            __source: {
-                                                                fileName: _jsxFileName,
-                                                                lineNumber: 182
-                                                            }
-                                                        },
-                                                        "Thanks for the message, ",
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                            "b",
+                                                        messages.length < 50 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "span",
                                                             {
                                                                 __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 182
+                                                                    lineNumber: 169
                                                                 }
                                                             },
-                                                            sender
+                                                            "Thanks for the message. But r u sure not to send us a longer one ?"
+                                                        ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "span",
+                                                            {
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 170
+                                                                }
+                                                            },
+                                                            "Thanks for the message, ",
+                                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                                "b",
+                                                                {
+                                                                    __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 170
+                                                                    }
+                                                                },
+                                                                sender
+                                                            )
                                                         )
                                                     )
                                                 )
@@ -8688,59 +8759,59 @@ var Section5Component = function (_PureComponent) {
                                             "div",
                                             { className: "row", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 190
+                                                    lineNumber: 178
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 "div",
-                                                { className: "col-sm-6 col-xs-12", __source: {
+                                                { className: "col-xs-12", __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 191
+                                                        lineNumber: 179
                                                     }
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "button",
                                                     { id: "btn-submit", type: "submit", className: "btn btn-lg btn-primary btn-block", disabled: isLoading, __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 192
+                                                            lineNumber: 180
                                                         }
                                                     },
                                                     isLoading ? "SENDING....." : "SEND"
-                                                )
-                                            ),
-                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                "div",
-                                                { className: "col-sm-6 col-xs-12 input-tips", __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 199
-                                                    }
-                                                },
-                                                isSubmitting && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                ),
+                                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "div",
-                                                    {
-                                                        __source: {
+                                                    { className: "input-tips", __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 201
+                                                            lineNumber: 186
                                                         }
                                                     },
-                                                    isLoading ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        "span",
+                                                    isSubmitting && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                        "div",
                                                         {
                                                             __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 203
+                                                                lineNumber: 188
                                                             }
                                                         },
-                                                        "Saving your messages..."
-                                                    ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        "span",
-                                                        {
-                                                            __source: {
-                                                                fileName: _jsxFileName,
-                                                                lineNumber: 204
-                                                            }
-                                                        },
-                                                        "Saved. Thanks."
+                                                        isLoading ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "span",
+                                                            {
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 190
+                                                                }
+                                                            },
+                                                            "Saving your messages..."
+                                                        ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                            "span",
+                                                            {
+                                                                __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 191
+                                                                }
+                                                            },
+                                                            "Saved. Thanks."
+                                                        )
                                                     )
                                                 )
                                             )

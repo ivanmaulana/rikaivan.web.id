@@ -1,10 +1,11 @@
 html, body {
     font-family: 'Roboto', serif;
+    color: #666;
 }
 
 #header {
     padding: 20px 0;
-    box-shadow: 0 3px 3px rgba(0,0,0,0.08);
+    box-shadow: 0 7px 20px -5px rgba(0,0,0,0.2);
     position: fixed;
     top: 0;
     width: 100vw;
@@ -55,12 +56,10 @@ html, body {
 }
 
 .section {
-    padding: 60px 0;
+    padding: 100px 0;
 }
 
 .section-1 {
-    background-color: #00bfa5;
-    color: white;
     margin-top: 72px;
 }
 
@@ -73,14 +72,14 @@ html, body {
 
 .section-1 h1 {
     font-family: "Roboto slab";
-    font-size: 46px;
+    font-size: 54px;
     padding-bottom: 30px;
-    color: white;   
 }
 
 .section-1 p {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 300;
+    margin-bottom: 60px;
 }
 
 .section-1 hr {
@@ -111,25 +110,22 @@ html, body {
     color: #444;
 }
 
-.section-3 {
-    display: table;
-    width: 100%;
-    background-color: #00b0ff;
-}
-
-.section-3 div {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.section-3 .title {
-    color: white;
-}
-
 .section-3 iframe {
     border: 0;
     width: 100%;
-    height: 408pxpx;
+    height: 240px;     border-radius: 2px;;
+}
+
+.section-3 .title {
+    color: #666;
+    margin-bottom: 30px;
+    font-family: "Roboto slab";
+    padding-bottom: 20px;
+}
+
+.section-3-container {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .wedding-map {
@@ -137,13 +133,7 @@ html, body {
 }
 
 .wedding-info {
-    padding: 30px !important;
-    color: white;
-}
-
-.section-3 .title {
-    font-family: "Roboto slab";
-    padding-bottom: 20px;
+    margin-top: 50px;
 }
 
 .wedding-title {
@@ -201,8 +191,9 @@ html, body {
 }
 
 .download-btn span {
-    border: 1px dashed white;
-    padding: 10px 20px;
+    background-color: #00bfa5;
+    color: white;
+    padding: 20px;
     border-radius: 2px;
     font-family: "Roboto slab";
     font-size: 16px;
@@ -233,7 +224,7 @@ html, body {
     }
 
     .section {
-        padding: 20px 0;
+        padding: 30px 0;
     }
 
     .section-1 {
@@ -241,7 +232,7 @@ html, body {
     }
     
     .section-1 h1 {
-        font-size: 27px;
+        font-size: 24px;
         padding-bottom: 20px;
     }
 
@@ -264,7 +255,8 @@ html, body {
     }
 
     .section-3 iframe {
-        height: 408pxpx;
+        height: 240px;
+        border-radius: 2px;;
     }
 
     .wedding-info {
@@ -276,6 +268,10 @@ html, body {
     .section-3 iframe {
         height: 300px;
     }
+    
+    .section-3 .title {
+        font-size: 22px;
+    }
 
     .groom {
         margin-top: 30px;
@@ -285,6 +281,11 @@ html, body {
 @media (min-width: 992px) {
     #header {
         padding: 20px;
+    }
+
+    .mobile-padding {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 

@@ -66,7 +66,7 @@ class Section5Component extends PureComponent {
             <div className="section section-5">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-10 col-md-offset-1 col-xs-12 col-sm-12">
+                        <div className="col-md-6 col-md-offset-3 col-xs-12 col-sm-8 col-sm-offset-2">
                             <div className="row">
                                 <div className="col-xs-12">
                                     <h4 className="stories-title">
@@ -76,18 +76,9 @@ class Section5Component extends PureComponent {
                                     <br />
 
                                     <form onSubmit={this.handleSubmit}>
-                                        <div className="row">
-                                            <div className="col-sm-6 col-xs-12">
-                                            
-                                            </div>
-                                            <div className="col-sm-6 col-xs-12">
-                                            
-                                            </div>
-                                        </div>
-
                                         <h4 className="input-title">Name</h4>
                                         <div className="row">
-                                            <div className="col-sm-6 col-xs-12">
+                                            <div className="col-xs-12">
                                                 <input
                                                     value={sender}
                                                     type="text"
@@ -96,18 +87,17 @@ class Section5Component extends PureComponent {
                                                     onChange={event => this.handleChangeState("sender", event.target.value)}
                                                     required
                                                 />
-                                            </div>
-                                            <div className="col-sm-6 col-xs-12 input-tips">
-                                                {sender &&
-                                                    <p>Hi, <b>{toTitleCase(sender)}</b>. Thanks for leaving us messages.</p>
-                                                }
+                                                <div className="input-tips">
+                                                    {sender &&
+                                                        <p>Hi, <b>{toTitleCase(sender)}</b>. Thanks for leaving us messages.</p>
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
-                                        
 
                                         <h4 className="input-title">Attending ?</h4>
                                         <div className="row">
-                                            <div className="col-sm-6 col-xs-12">
+                                            <div className="col-xs-12">
                                                 <div className="row">
                                                     <div className="col-xs-6" style={{paddingRight: "7px"}}>
                                                         <div
@@ -126,24 +116,23 @@ class Section5Component extends PureComponent {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div id="attending-messages" className="col-sm-6 col-xs-12">
-                                                {isAttending != null &&
-                                                    <div className="input-tips">
-                                                        {isAttending ?
-                                                            <span><b>Great!</b> See you there.</span> :
-                                                            <span>Hopefully we can meet you there.</span>
-                                                        }
-                                                    </div>
-                                                }
+                                                <div className="input-tips">
+                                                    {isAttending != null &&
+                                                        <div className="input-tips">
+                                                            {isAttending ?
+                                                                <span><b>Great!</b> See you there.</span> :
+                                                                <span>Hopefully we can meet you there.</span>
+                                                            }
+                                                        </div>
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
-                                        
                                         <br />
 
                                         <h4 className="input-title">Email</h4>
                                         <div className="row">
-                                            <div className="col-sm-6 col-xs-12">
+                                            <div className="col-xs-12">
                                                 <input
                                                     value={email}
                                                     type="email"
@@ -151,20 +140,20 @@ class Section5Component extends PureComponent {
                                                     placeholder="Name "
                                                     onChange={event => this.handleChangeState("email", event.target.value)}
                                                 />
-                                            </div>
-                                            <div className="col-sm-6 col-xs-12">
-                                                {email &&
-                                                    <div className="input-tips">
-                                                        We'll send your photo to <b>{email}</b>
-                                                    </div>
-                                                }
+                                                <div className="input-tips">
+                                                    {email &&
+                                                        <div className="input-tips">
+                                                            We'll send your photo to <b>{email}</b>
+                                                        </div>
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
                                         
 
                                         <h4 className="input-title">Messages</h4>
                                         <div className="row">
-                                            <div className="col-sm-6 col-xs-12">
+                                            <div className="col-xs-12">
                                                 <textarea
                                                     value={messages}
                                                     className="form-control"
@@ -173,38 +162,37 @@ class Section5Component extends PureComponent {
                                                     onChange={event => this.handleChangeState("messages", event.target.value)}
                                                     required
                                                 />
-                                            </div>
-                                            <div className="col-sm-6 col-xs-12 input-tips">
-                                                {messages != "" &&
-                                                    <div>
-                                                        {messages.length < 50 ?
-                                                            <span>Thanks for the message. But r u sure not to send us a longer one ?</span> :
-                                                            <span>Thanks for the message, <b>{sender}</b></span>
-                                                        }
-                                                    </div>
-                                                }
+                                                <div className="input-tips">
+                                                    {messages != "" &&
+                                                        <div>
+                                                            {messages.length < 50 ?
+                                                                <span>Thanks for the message. But r u sure not to send us a longer one ?</span> :
+                                                                <span>Thanks for the message, <b>{sender}</b></span>
+                                                            }
+                                                        </div>
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
-                                        
 
                                         <div className="row">
-                                            <div className="col-sm-6 col-xs-12">
+                                            <div className="col-xs-12">
                                                 <button id="btn-submit" type="submit" className="btn btn-lg btn-primary btn-block" disabled={isLoading}>
                                                     {isLoading ?
                                                         "SENDING....." :
                                                         "SEND"
                                                     }
                                                 </button>
-                                            </div>
-                                            <div className="col-sm-6 col-xs-12 input-tips">
-                                                {isSubmitting &&
-                                                    <div>
-                                                        {isLoading ?
-                                                            <span>Saving your messages...</span> :
-                                                            <span>Saved. Thanks.</span>
-                                                        }
-                                                    </div>
-                                                }
+                                                <div className="input-tips">
+                                                    {isSubmitting &&
+                                                        <div>
+                                                            {isLoading ?
+                                                                <span>Saving your messages...</span> :
+                                                                <span>Saved. Thanks.</span>
+                                                            }
+                                                        </div>
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
                                     </form>

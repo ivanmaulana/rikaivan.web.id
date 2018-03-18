@@ -7,13 +7,13 @@ class Section1Component extends PureComponent {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-10 col-md-offset-1 col-xs-12 col-sm-10 col-sm-offset-1">
-                            <h1>We're Getting Married.</h1>
                             <div className="row">
                                 <div className="col-xs-12 col-md-6 col-sm-6">
-                                    <p>Together with our parents. <br /> We, invite you to share in the joy of beginning our new life together.</p>
-                                    <p className="section-1-title">- Rika Rosdiana & Ivan Maulana.</p>
+                                    
                                 </div>
-                                <div className="col-xs-12 col-md-6 col-sm-6 text-center download-btn" style={{marginTop: "18px"}}>
+                                <div className="col-xs-12 col-md-6 col-sm-6 download-btn" style={{marginTop: "18px"}}>
+                                    <h1>We're Getting Married.</h1>
+                                    <p>Together with our parents. <br /> We, invite you to share in the joy of beginning our new life together.</p>
                                     <span>
                                         Get our invitation (.pdf soft copy) <img src="/static/download.png" width="16" />
                                     </span>
