@@ -7650,7 +7650,7 @@ var Section2Component = function (_PureComponent) {
                                         lineNumber: 10
                                     }
                                 },
-                                "\u201CAnd among his signs is this, that He created for you mates from among your yourselves that you may dwell in tranquillity with them. ",
+                                "\u201CAnd among his signs is this, that He created for you mates from among yourselves that you may dwell in tranquillity with them. ",
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", { className: "visible-xs", __source: {
                                         fileName: _jsxFileName,
                                         lineNumber: 10
