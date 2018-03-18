@@ -116,7 +116,7 @@ class Section5Component extends PureComponent {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="input-tips">
+                                                <div style={{paddingTop: "10px"}}>
                                                     {isAttending != null &&
                                                         <div className="input-tips">
                                                             {isAttending ?

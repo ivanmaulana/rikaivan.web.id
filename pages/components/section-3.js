@@ -15,7 +15,13 @@ class Section3Component extends PureComponent {
                         <div className="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 wedding-info">
                             <div className="row">
                                 <div className="col-xs-12 col-sm-6">
-                                    <div className="row mobile-padding">
+                                    <div className="row mobile-padding hidden-xs">
+                                        <p className="wedding-title text-right">Date:</p>
+                                        <p className="wedding-detail text-right"><b>Sunday, April 1, 2018</b></p>
+                                        <p className="wedding-title text-right">Time:</p>
+                                        <p className="wedding-detail text-right"><b>8 AM - 9 PM</b></p>
+                                    </div>
+                                    <div className="row mobile-padding visible-xs">
                                         <p className="wedding-title">Date:</p>
                                         <p className="wedding-detail"><b>Sunday, April 1, 2018</b></p>
                                         <p className="wedding-title">Time:</p>

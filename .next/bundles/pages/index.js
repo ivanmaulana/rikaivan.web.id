@@ -7841,14 +7841,14 @@ var Section3Component = function (_PureComponent) {
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         "div",
-                                        { className: "row mobile-padding", __source: {
+                                        { className: "row mobile-padding hidden-xs", __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 18
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "p",
-                                            { className: "wedding-title", __source: {
+                                            { className: "wedding-title text-right", __source: {
                                                     fileName: _jsxFileName,
                                                     lineNumber: 19
                                                 }
@@ -7857,7 +7857,7 @@ var Section3Component = function (_PureComponent) {
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "p",
-                                            { className: "wedding-detail", __source: {
+                                            { className: "wedding-detail text-right", __source: {
                                                     fileName: _jsxFileName,
                                                     lineNumber: 20
                                                 }
@@ -7875,7 +7875,7 @@ var Section3Component = function (_PureComponent) {
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "p",
-                                            { className: "wedding-title", __source: {
+                                            { className: "wedding-title text-right", __source: {
                                                     fileName: _jsxFileName,
                                                     lineNumber: 21
                                                 }
@@ -7884,7 +7884,7 @@ var Section3Component = function (_PureComponent) {
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "p",
-                                            { className: "wedding-detail", __source: {
+                                            { className: "wedding-detail text-right", __source: {
                                                     fileName: _jsxFileName,
                                                     lineNumber: 22
                                                 }
@@ -7900,22 +7900,41 @@ var Section3Component = function (_PureComponent) {
                                                 "8 AM - 9 PM"
                                             )
                                         )
-                                    )
-                                ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    "div",
-                                    { className: "col-xs-12 col-sm-6", __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 25
-                                        }
-                                    },
+                                    ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         "div",
-                                        { className: "row mobile-padding", __source: {
+                                        { className: "row mobile-padding visible-xs", __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 26
+                                                lineNumber: 24
                                             }
                                         },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "wedding-title", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 25
+                                                }
+                                            },
+                                            "Date:"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "wedding-detail", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 26
+                                                }
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "b",
+                                                {
+                                                    __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 26
+                                                    }
+                                                },
+                                                "Sunday, April 1, 2018"
+                                            )
+                                        ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "p",
                                             { className: "wedding-title", __source: {
@@ -7923,7 +7942,7 @@ var Section3Component = function (_PureComponent) {
                                                     lineNumber: 27
                                                 }
                                             },
-                                            "Location:"
+                                            "Time:"
                                         ),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             "p",
@@ -7940,6 +7959,49 @@ var Section3Component = function (_PureComponent) {
                                                         lineNumber: 28
                                                     }
                                                 },
+                                                "8 AM - 9 PM"
+                                            )
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "div",
+                                    { className: "col-xs-12 col-sm-6", __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 31
+                                        }
+                                    },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        "div",
+                                        { className: "row mobile-padding", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 32
+                                            }
+                                        },
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "wedding-title", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 33
+                                                }
+                                            },
+                                            "Location:"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "wedding-detail", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 34
+                                                }
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "b",
+                                                {
+                                                    __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 34
+                                                    }
+                                                },
                                                 "Aula Musholla As Salam"
                                             )
                                         ),
@@ -7947,7 +8009,7 @@ var Section3Component = function (_PureComponent) {
                                             "p",
                                             { className: "wedding-title", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 29
+                                                    lineNumber: 35
                                                 }
                                             },
                                             "Address:"
@@ -7956,7 +8018,7 @@ var Section3Component = function (_PureComponent) {
                                             "p",
                                             { className: "wedding-detail", __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 30
+                                                    lineNumber: 36
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -7964,7 +8026,7 @@ var Section3Component = function (_PureComponent) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 30
+                                                        lineNumber: 36
                                                     }
                                                 },
                                                 "Jl. Kemandoran Pluis No.24, Kebayoran Lama, Jakarta Selatan"
@@ -8110,78 +8172,128 @@ var Section4Component = function (_PureComponent) {
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "p",
-                                        { className: "bride", __source: {
+                                        "div",
+                                        { className: "colored-container", __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 12
                                             }
                                         },
-                                        "THE BRIDE"
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "bride-after", __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 13
-                                        }
-                                    }),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h3",
-                                        { className: "bride-name", __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "bride", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 13
+                                                }
+                                            },
+                                            "THE BRIDE"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "bride-after", __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 14
                                             }
-                                        },
-                                        "Rika Rosdiana"
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "p",
-                                        {
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 15
-                                            }
-                                        },
-                                        "Daughter of (Alm.) Mr. Rochmani & Mrs. Rohimah"
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "h3",
+                                            { className: "bride-name", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 15
+                                                }
+                                            },
+                                            "Rika Rosdiana"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            {
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 16
+                                                }
+                                            },
+                                            "Daughter of (Alm.) Mr. Rochmani & Mrs. Rohimah"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { "class": "see-profile", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 17
+                                                }
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "a",
+                                                { href: "https://linkedin.com/in/ivanmaulana", target: "_blank", __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 17
+                                                    }
+                                                },
+                                                "See Profile"
+                                            )
+                                        )
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     "div",
                                     { className: "col-xs-12 col-md-6 col-sm-6", __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 17
+                                            lineNumber: 20
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "p",
-                                        { className: "groom", __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 18
-                                            }
-                                        },
-                                        "THE GROOM"
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "groom-after", __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 19
-                                        }
-                                    }),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "h3",
-                                        { className: "groom-name", __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 20
-                                            }
-                                        },
-                                        "Ivan Maulana Putra"
-                                    ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        "p",
-                                        {
-                                            __source: {
+                                        "div",
+                                        { className: "colored-container", __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 21
                                             }
                                         },
-                                        "Son of Mr. Syahruroji & Mrs. Marhaliah"
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { className: "groom", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 22
+                                                }
+                                            },
+                                            "THE GROOM"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { className: "groom-after", __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 23
+                                            }
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "h3",
+                                            { className: "groom-name", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 24
+                                                }
+                                            },
+                                            "Ivan Maulana Putra"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            {
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 25
+                                                }
+                                            },
+                                            "Son of Mr. Syahruroji & Mrs. Marhaliah"
+                                        ),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            "p",
+                                            { "class": "see-profile", __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 26
+                                                }
+                                            },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                "a",
+                                                { href: "https://linkedin.com/in/ivanmaulana", target: "_blank", __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 26
+                                                    }
+                                                },
+                                                "See Profile"
+                                            )
+                                        )
                                     )
                                 )
                             )
@@ -8554,7 +8666,7 @@ var Section5Component = function (_PureComponent) {
                                                 ),
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                     "div",
-                                                    { className: "input-tips", __source: {
+                                                    { style: { paddingTop: "10px" }, __source: {
                                                             fileName: _jsxFileName,
                                                             lineNumber: 119
                                                         }

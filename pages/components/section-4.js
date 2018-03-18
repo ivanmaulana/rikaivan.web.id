@@ -9,16 +9,22 @@ class Section4Component extends PureComponent {
                         <div className="col-md-10 col-md-offset-1 col-xs-12 col-sm-10 col-sm-offset-1">
                             <div className="row">
                                 <div className="col-xs-12 col-md-6 col-sm-6">
-                                    <p className="bride">THE BRIDE</p>
-                                    <div className="bride-after"></div>
-                                    <h3 className="bride-name">Rika Rosdiana</h3>
-                                    <p>Daughter of (Alm.) Mr. Rochmani & Mrs. Rohimah</p>
+                                    <div className="colored-container">
+                                        <p className="bride">THE BRIDE</p>
+                                        <div className="bride-after"></div>
+                                        <h3 className="bride-name">Rika Rosdiana</h3>
+                                        <p>Daughter of (Alm.) Mr. Rochmani & Mrs. Rohimah</p>
+                                        <p class="see-profile"><a href="https://linkedin.com/in/ivanmaulana" target="_blank">See Profile</a></p>
+                                    </div>
                                 </div>
                                 <div className="col-xs-12 col-md-6 col-sm-6">
-                                    <p className="groom">THE GROOM</p>
-                                    <div className="groom-after"></div>
-                                    <h3 className="groom-name">Ivan Maulana Putra</h3>
-                                    <p>Son of Mr. Syahruroji & Mrs. Marhaliah</p>
+                                    <div className="colored-container">
+                                        <p className="groom">THE GROOM</p>
+                                        <div className="groom-after"></div>
+                                        <h3 className="groom-name">Ivan Maulana Putra</h3>
+                                        <p>Son of Mr. Syahruroji & Mrs. Marhaliah</p>
+                                        <p class="see-profile"><a href="https://linkedin.com/in/ivanmaulana" target="_blank">See Profile</a></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
